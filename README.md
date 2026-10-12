@@ -42,6 +42,6 @@ El archivo `.github/workflows/publicar.yml` compila y publica la página en cada
 
 Los scripts están en `scripts/` (Python con pandas, numpy, scipy y matplotlib):
 
-- `procesar_vuelo18.py` genera el CSV del Tema 1 y su figura a partir del archivo original `18.csv` (colocarlo junto al script).
+- `procesar_vuelo18.py` genera el CSV del Tema 1 y su figura a partir del archivo original `18.csv`.
 - `grafica_tema4.py` genera la imagen de la gráfica del Tema 4.
 - `figura_tema5.py` genera la figura del Tema 5.
