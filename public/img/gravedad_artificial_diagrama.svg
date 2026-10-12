@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 660" width="1040" height="660" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="t3t t3d">
+<title id="t3t">Gravedad artificial por rotación en un hábitat espacial</title>
+<desc id="t3d">Corte transversal de un hábitat en forma de aro que gira con velocidad angular omega alrededor de un eje perpendicular al plano. Un tripulante de pie en la cara interna del aro tiene una velocidad tangencial v igual a omega por R y una aceleración centrípeta dirigida hacia el eje, igual a omega al cuadrado por R.</desc>
+<defs><marker id="aB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1f5fa8"/></marker><marker id="aR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c4562a"/></marker><marker id="aG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2f7d5b"/></marker></defs>
+<rect width="1040" height="660" fill="#ffffff"/>
+<text x="30" y="38" font-size="21" font-weight="700" fill="#1d2a3a">Gravedad artificial por rotación: corte transversal del hábitat</text>
+<text x="30" y="60" font-size="12.5" fill="#555">Esquema propio, fuera de escala (el tripulante se dibujó mucho más grande que en la realidad).</text>
+<circle cx="370" cy="340" r="195.0" fill="none" stroke="#cfdcee" stroke-width="20"/>
+<circle cx="370" cy="340" r="205" fill="none" stroke="#1d2a3a" stroke-width="2.4"/>
+<circle cx="370" cy="340" r="185" fill="none" stroke="#1d2a3a" stroke-width="2.4"/>
+<line x1="392.0" y1="340.0" x2="555.0" y2="340.0" stroke="#9aa7b8" stroke-width="2" />
+<line x1="370.0" y1="318.0" x2="370.0" y2="155.0" stroke="#9aa7b8" stroke-width="2" />
+<line x1="348.0" y1="340.0" x2="185.0" y2="340.0" stroke="#9aa7b8" stroke-width="2" />
+<line x1="370.0" y1="362.0" x2="370.0" y2="525.0" stroke="#9aa7b8" stroke-width="2" />
+<circle cx="370" cy="340" r="22" fill="#e8eef7" stroke="#1d2a3a" stroke-width="2"/>
+<circle cx="370" cy="340" r="9" fill="#fff" stroke="#c4562a" stroke-width="2"/><circle cx="370" cy="340" r="3" fill="#c4562a"/>
+<line x1="362.0" y1="349.0" x2="324.0" y2="402.0" stroke="#c4562a" stroke-width="1.2" />
+<text x="318" y="418" font-size="12.5" fill="#c4562a" text-anchor="end">Eje de giro</text>
+<text x="318" y="433" font-size="12.5" fill="#c4562a" text-anchor="end">perpendicular</text>
+<text x="318" y="448" font-size="12.5" fill="#c4562a" text-anchor="end">al plano</text>
+<line x1="360.2" y1="333.1" x2="218.5" y2="233.9" stroke="#555" stroke-width="1.6" stroke-dasharray="6 4"/>
+<text x="302.7" y="281.8" font-size="19" font-style="italic" fill="#1d2a3a" text-anchor="middle">R</text>
+<path d="M152.9,419.0 A231,231 0 0 0 298.6,559.7" fill="none" stroke="#1f5fa8" stroke-width="3.2" marker-end="url(#aB)"/>
+<text x="187.9" y="501.9" font-size="20" font-style="italic" fill="#1f5fa8" text-anchor="end">ω</text>
+<text x="187.9" y="518.9" font-size="12.5" fill="#1f5fa8" text-anchor="end">sentido antihorario</text>
+<line x1="218.5" y1="233.9" x2="243.0" y2="251.1" stroke="#1d2a3a" stroke-width="3.6" stroke-linecap="round"/>
+<line x1="243.0" y1="251.1" x2="261.1" y2="263.7" stroke="#1d2a3a" stroke-width="3.6" stroke-linecap="round"/>
+<line x1="243.0" y1="251.1" x2="224.2" y2="225.7" stroke="#1d2a3a" stroke-width="3.6" stroke-linecap="round"/>
+<line x1="257.8" y1="261.4" x2="255.5" y2="240.3" stroke="#1d2a3a" stroke-width="3.2" stroke-linecap="round"/>
+<line x1="243.0" y1="251.1" x2="212.7" y2="242.1" stroke="#1d2a3a" stroke-width="3.6" stroke-linecap="round"/>
+<line x1="257.8" y1="261.4" x2="237.1" y2="266.5" stroke="#1d2a3a" stroke-width="3.2" stroke-linecap="round"/>
+<circle cx="267.6" cy="268.3" r="8" fill="#fff" stroke="#1d2a3a" stroke-width="3"/>
+<line x1="218.5" y1="233.9" x2="165.7" y2="309.3" stroke="#2f7d5b" stroke-width="3.6" marker-end="url(#aG)"/>
+<text x="153.7" y="331.3" font-size="16" fill="#2f7d5b" font-weight="700" text-anchor="end">v = ωR</text>
+<text x="153.7" y="347.3" font-size="12.5" fill="#2f7d5b" text-anchor="end">(tangente)</text>
+<line x1="258.6" y1="225.4" x2="334.0" y2="278.1" stroke="#c4562a" stroke-width="3.6" marker-end="url(#aR)"/>
+<text x="348.0" y="282.1" font-size="16" fill="#c4562a" font-weight="700">a<tspan font-size="11" dy="4">c</tspan><tspan dy="-4"> = ω²R</tspan></text>
+<text x="348.0" y="299.1" font-size="12.5" fill="#c4562a">(hacia el eje)</text>
+<text x="175.9" y="198.1" font-size="13.5" font-weight="700" fill="#1d2a3a" text-anchor="end">Tripulante</text>
+<text x="175.9" y="214.1" font-size="12.5" fill="#555" text-anchor="end">pies en la cara interna</text>
+<text x="30" y="598" font-size="12.5" fill="#555">El piso empuja al tripulante hacia el eje con una fuerza N = m·a<tspan font-size="9.5" dy="3">c</tspan><tspan dy="-3">;</tspan></text>
+<text x="30" y="616" font-size="12.5" fill="#555">esa fuerza es lo que se siente como peso.</text>
+<rect x="690" y="92" width="320" height="200" rx="8" fill="#f6f8fb" stroke="#c9d3e0"/>
+<text x="706" y="120" font-size="14.5" font-weight="700" fill="#1f5fa8">Movimiento circular uniforme</text>
+<text x="712" y="150" font-size="18" font-style="italic" fill="#1d2a3a">v = ωR</text>
+<text x="712" y="184" font-size="18" font-style="italic" fill="#1d2a3a">a<tspan font-size="12" dy="4">c</tspan><tspan dy="-4"> = v²/R = ω²R</tspan></text>
+<text x="712" y="218" font-size="18" font-style="italic" fill="#1d2a3a">T = 2π/ω</text>
+<text x="860" y="218" font-size="18" font-style="italic" fill="#1d2a3a">f = 1/T</text>
+<text x="712" y="252" font-size="18" font-style="italic" fill="#1d2a3a">ω [rad/s] = rpm · 2π/60</text>
+<text x="706" y="278" font-size="11.5" fill="#555">ω: velocidad angular · R: radio · T: período · f: frecuencia</text>
+<rect x="690" y="312" width="320" height="300" rx="8" fill="#f6f8fb" stroke="#c9d3e0"/>
+<text x="706" y="340" font-size="14.5" font-weight="700" fill="#c4562a">Caso numérico: 1 g a 2 rpm</text>
+<text x="706" y="362" font-size="12" fill="#555">Condición</text>
+<text x="706" y="380" font-size="14.5" fill="#1d2a3a">a<tspan font-size="11" dy="4">c</tspan><tspan dy="-4"> = g</tspan><tspan font-size="11" dy="4">0</tspan><tspan dy="-4"> = 9,80665 m/s²</tspan></text>
+<text x="706" y="404" font-size="12" fill="#555">Velocidad angular</text>
+<text x="706" y="422" font-size="14.5" fill="#1d2a3a">ω = 2 · 2π/60 = 0,2094 rad/s</text>
+<text x="706" y="446" font-size="12" fill="#555">Radio necesario</text>
+<text x="706" y="464" font-size="14.5" fill="#1d2a3a">R = g₀/ω² = 9,80665/0,2094² ≈ 223,6 m</text>
+<text x="706" y="488" font-size="12" fill="#555">Rapidez en el piso</text>
+<text x="706" y="506" font-size="14.5" fill="#1d2a3a">v = ωR ≈ 46,8 m/s</text>
+<text x="706" y="530" font-size="12" fill="#555">Período y frecuencia</text>
+<text x="706" y="548" font-size="14.5" fill="#1d2a3a">T = 2π/ω = 30 s  ·  f ≈ 0,033 Hz</text>
+<text x="706" y="572" font-size="12" fill="#555">Gradiente cabeza–pies</text>
+<text x="706" y="590" font-size="14.5" fill="#1d2a3a">Δa/a = h/R = 1,8/223,6 ≈ 0,8 %</text>
+<text x="30" y="644" font-size="11.5" fill="#555">g₀ = 9,80665 m/s² (gravedad estándar). Fuentes: Serway y Jewett (2018); Lackner y DiZio (2000); Bretl y Clark (2020).</text>
+</svg>
