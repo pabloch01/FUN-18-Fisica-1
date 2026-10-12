@@ -34,19 +34,9 @@ src/
     Referencias.jsx                     Referencias en APA 7
 ```
 
-## Antes de entregar
-
-1. **Referencias:** comprobar que cada cita del texto aparezca en `Referencias.jsx` y viceversa.
-2. **Datos de terceros:** el Tema 1 usa el vuelo 18 de Rodrigues et al. (2020), licencia CC BY 4.0. El archivo
-   `public/data/vuelo18_procesado.csv` es una versión modificada (coordenadas locales, velocidad rotada, aceleración derivada).
-3. **Video del Tema 5:** abrir la página publicada y comprobar que el video se reproduce (si el autor desactivó la
-   inserción, YouTube mostrará un error y habría que enlazarlo en lugar de incrustarlo).
-4. **Entrega en Moodle:** URL de la página publicada y URL del repositorio público.
-
 ## Publicación en GitHub Pages
 
 El archivo `.github/workflows/publicar.yml` compila y publica la página en cada `git push` a la rama `main`.
-En el repositorio de GitHub, ir a **Settings → Pages → Build and deployment → Source** y elegir **GitHub Actions**.
 
 ## Reproducir los datos y las figuras
 
