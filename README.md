@@ -9,4 +9,3 @@ Repositorio creado con el fin de alojar las tareas del curso FUN-18 Física 1.
 └── practicas\
 │ &emsp; ├──practica-1\
 │ &emsp; └──practica-2\
-└── estudios-de-caso\
