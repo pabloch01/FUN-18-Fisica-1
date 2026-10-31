@@ -1,4 +1,4 @@
-# Portafolio de evidencias · Física I (FUN-18) · Avance 1
+# Portafolio de evidencias · Física I (FUN-18) · Avance 2
 
 Página hecha con React + Vite + Recharts. Cada tema tiene su caso de uso (parte A) y su recurso de apoyo (parte B).
 
@@ -36,7 +36,7 @@ src/
 
 ## Publicación en GitHub Pages
 
-El archivo `.github/workflows/publicar.yml` compila y publica la página en cada `git push` a la rama `main`.
+El archivo `.github/workflows/publicar.yml` compila y publica la página en cada `git push` a la rama `portafolios`.
 
 ## Reproducir los datos y las figuras
 
