@@ -27,7 +27,8 @@ export default function Tema1() {
         </p>
         <Eq etiqueta="Definiciones de velocidad y aceleración en componentes">
           <div><i>r</i>(<i>t</i>) = (<i>x</i>, <i>y</i>) &nbsp;→&nbsp; <i>v</i> = d<i>r</i>/d<i>t</i> = (<i>v</i><sub>x</sub>, <i>v</i><sub>y</sub>) &nbsp;→&nbsp; <i>a</i> = d<i>v</i>/d<i>t</i> = (<i>a</i><sub>x</sub>, <i>a</i><sub>y</sub>)</div>
-          <div>|<i>v</i>| = √(<i>v</i><sub>x</sub>² + <i>v</i><sub>y</sub>²) &nbsp;&nbsp; θ = atan2(<i>v</i><sub>y</sub>, <i>v</i><sub>x</sub>)</div>
+          <div>|<i>v</i>| = √(<i>v</i><sub>x</sub>² + <i>v</i><sub>y</sub>²) &nbsp;&nbsp; θ = atan2(<i>v</i><sub>y</sub>, <i>v</i><sub>x</sub>) (ángulo desde el eje <i>x</i>)</div>
+          <div>Con <i>x</i> hacia el este y <i>y</i> hacia el norte, el rumbo de navegación (desde el norte, en sentido horario) es ψ = atan2(<i>v</i><sub>E</sub>, <i>v</i><sub>N</sub>) = 90° − θ</div>
           <div>Con datos muestreados: <i>v</i><sub>i</sub> ≈ (<i>r</i><sub>i+1</sub> − <i>r</i><sub>i</sub>)/Δ<i>t</i></div>
           <div><i>v</i><sub>suelo</sub> = <i>v</i><sub>aire</sub> + <i>w</i> &nbsp;&nbsp; ETA = <i>d</i><sub>restante</sub> / (<i>v</i><sub>suelo</sub> · û)</div>
         </Eq>
@@ -66,7 +67,7 @@ export default function Tema1() {
         </p>
         <p>
           El segundo problema es el ruido. Derivar la aceleración por diferencias finitas lo amplifica: con la
-          precisión de velocidad del sensor (±0,1 m/s; Rodrigues et al., 2021) y el intervalo medio de este vuelo
+          precisión de velocidad del sensor (±0,1 m/s; Rodrigues et al., 2021) y el intervalo mediano de este vuelo
           (Δt ≈ 0,11 s), el error de la aceleración sería de σ<sub>a</sub> ≈ √2 · 0,1 / 0,11 ≈ 1,3 m/s² (estimación propia).
           Por eso el software debe suavizar las señales antes de derivar, como se hizo en la gráfica de abajo.
         </p>
@@ -97,7 +98,8 @@ export default function Tema1() {
         <p>
           La trayectoria (a) es un triángulo que cierra a 0,5 m del punto de partida. En el panel (c) se ve la
           naturaleza vectorial de la velocidad: en el tramo 1 las componentes son <i>v</i><sub>E</sub> ≈ 3,6 m/s y
-          <i> v</i><sub>N</sub> ≈ 1,7 m/s, de modo que |<i>v</i>| = 4,0 m/s y el rumbo es atan2(3,6; 1,7) ≈ 65°. En el
+          <i> v</i><sub>N</sub> ≈ 1,7 m/s, de modo que |<i>v</i>| = 4,0 m/s y el rumbo es ψ = atan2(<i>v</i><sub>E</sub>, <i>v</i><sub>N</sub>) = atan2(3,6; 1,7) ≈ 65°, medido desde
+          el norte (equivale a θ ≈ 25° medido desde el este). En el
           tramo 2 el dron vuela hacia el sur-suroeste y las dos componentes cambian de signo, pero la rapidez sigue
           siendo de 4 m/s. Las franjas de aceleración (d) aparecen donde la rapidez cae a cero en cada vértice, con
           valores de hasta unos 4 m/s² en las detenciones.
