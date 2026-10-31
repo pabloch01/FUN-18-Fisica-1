@@ -58,7 +58,7 @@ export default function Tema2() {
           fijan <i>g</i> y <i>v</i><sub>0</sub> directamente, y los valores se pueden ajustar sin tocar el resto del
           nivel. El mismo modelo permite usar una gravedad distinta al descender, algo que la charla de Pittman (2016)
           incluye entre las formas de dar mejor sensación a un salto. Con g = 9,81 m/s² y una altura de 2 m el
-          personaje queda en el aire 1,28 s, casi el doble de lo que dura el salto de diseño, y se siente flotante.
+          personaje queda en el aire 1,28 s, un 60 % más que el salto de diseño (0,80 s), y se siente flotante.
         </p>
       </Bloque>
 
