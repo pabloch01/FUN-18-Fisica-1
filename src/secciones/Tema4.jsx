@@ -23,10 +23,20 @@ export default function Tema4() {
 
         <h4>El concepto físico</h4>
         <p>
-          El modelo simple de fricción dice que la fuerza máxima antes de deslizar es <i>F</i><sub>max</sub> = μ<i>N</i>,
-          con μ constante, así que sería proporcional a la carga y no dependería de la temperatura (Serway y Jewett,
-          2018). El neumático real no se comporta así. Primero, μ cambia con la temperatura; Alcázar Vargas et al.
-          (2022) lo modelan con:
+          El modelo simple de fricción distingue dos coeficientes (Serway y Jewett, 2018). Mientras la superficie no
+          desliza, la fricción estática toma el valor que haga falta hasta un máximo, y cuando desliza, la fricción
+          cinética es constante:
+        </p>
+        <Eq etiqueta="Fricción estática y cinética (modelo simple)">
+          <div><i>f</i><sub>s</sub> ≤ μ<sub>s</sub><i>N</i> &nbsp;&nbsp; <i>f</i><sub>k</sub> = μ<sub>k</sub><i>N</i> &nbsp;&nbsp; con μ<sub>k</sub> &lt; μ<sub>s</sub></div>
+        </Eq>
+        <p>
+          Visto de forma simplificada, en una curva el agarre lateral máximo de la llanta corresponde al límite estático: mientras la banda de
+          rodamiento se adhiere al asfalto, la llanta puede dar hasta μ<sub>s</sub><i>N</i>. Si se supera ese límite y la llanta
+          desliza, la fuerza cae al valor cinético μ<sub>k</sub><i>N</i>, que es menor; por eso un auto que empieza a derrapar
+          pierde agarre justo cuando más lo necesita. En este modelo, con μ<sub>s</sub> constante, la fuerza máxima sería
+          proporcional a la carga y no dependería de la temperatura. El neumático real no se comporta así. Primero, el
+          coeficiente cambia con la temperatura; Alcázar Vargas et al. (2022) lo modelan con:
         </p>
         <Eq etiqueta="Coeficiente de fricción lateral en función de la temperatura">
           <div>μ<sub>y</sub>(<i>T</i>) = μ<sub>max</sub> + [1 − cosh((<i>T</i> − <i>T</i><sub>opt</sub>)/<i>T</i><sub>disp</sub>)]</div>
@@ -34,7 +44,17 @@ export default function Tema4() {
         </Eq>
         <p>
           Segundo, el coeficiente de agarre disminuye al aumentar la carga (sensibilidad a la carga; Milliken y
-          Milliken, 1995), de modo que la fuerza máxima no crece en proporción a la carga como predice μ constante.
+          Milliken, 1995). Una forma sencilla de representarlo es suponer que μ baja linealmente con la carga vertical:
+        </p>
+        <Eq etiqueta="Sensibilidad a la carga (aproximación lineal)">
+          <div>μ(<i>F</i><sub>z</sub>) = μ<sub>0</sub> − <i>c</i>·<i>F</i><sub>z</sub> &nbsp;&nbsp;⟹&nbsp;&nbsp; <i>F</i><sub>max</sub> = μ<sub>0</sub><i>F</i><sub>z</sub> − <i>c</i>·<i>F</i><sub>z</sub>²</div>
+        </Eq>
+        <p>
+          Aquí μ<sub>0</sub> es el coeficiente extrapolado a carga nula y <i>c</i> &gt; 0 mide cuánto se pierde por cada newton
+          de carga; ambos se ajustan con ensayos de cada neumático. El término −<i>c</i>·<i>F</i><sub>z</sub>² hace que la curva de
+          fuerza máxima contra carga se doble hacia abajo: al duplicar la carga, la fuerza máxima crece menos del
+          doble. Por eso, cuando en una curva la carga se transfiere de la llanta interior a la exterior, el eje pierde
+          agarre total: la llanta exterior gana menos fuerza de la que pierde la interior (Milliken y Milliken, 1995).
         </p>
 
         <Tabla
@@ -104,7 +124,7 @@ export default function Tema4() {
             Si se define la ventana como el intervalo donde μ se mantiene por encima de cierto porcentaje de su
             máximo, el modelo da: μ ≥ 95 % de μ<sub>max</sub> entre ≈ 72 y ≈ 104 °C, y μ ≥ 90 % entre ≈ 65 y ≈ 111 °C. Los
             límites inferiores están dentro del rango de los datos; los superiores quedan fuera (≈ 101 °C), así
-            que son extrapolación y están marcados con asterisco en la figura.
+            que son extrapolación y en la Figura 3 esa parte de la curva se dibuja con línea punteada.
           </p>
         </Destacado>
       </Bloque>
