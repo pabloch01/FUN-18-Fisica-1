@@ -50,7 +50,7 @@ export default function Tema3() {
         <p>
           Una tabla de “valores recomendados” no cubre un espacio de diseño continuo, porque cada radio y cada
           gravedad objetivo producen una velocidad angular distinta. Además, la intuición lineal falla: como a<sub>c</sub> ∝ ω²,
-          duplicar las rpm cuadruplica la gravedad aparente. Y la elección del radio es un compromiso, porque para una
+          con el mismo radio, duplicar las rpm cuadruplica la gravedad aparente. Y la elección del radio es un compromiso, porque para una
           gravedad dada se puede girar más rápido con un radio menor o más despacio con un radio mayor (Lackner y
           DiZio, 2000). Los primeros estudios sugerían alrededor de 3 rpm como límite superior; trabajos posteriores
           indican que, con aumentos graduales de la velocidad, podrían tolerarse entre 7,5 y 10 rpm (Lackner y DiZio,
