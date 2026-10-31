@@ -8,7 +8,7 @@ export default function Tema5() {
     <Seccion
       id="tema-5"
       numero={5}
-      titulo="El resorte detrás de un control háptico"
+      titulo="El resorte virtual detrás de un control háptico"
       concepto="ley de Hooke, fuerza elástica y tercera ley de Newton; cómo un motor de vibración o un gatillo adaptativo simula que uno está tensando algo que no existe."
       recurso="multimedia con análisis"
     >

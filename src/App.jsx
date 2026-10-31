@@ -12,7 +12,7 @@ const TEMAS = [
   { id: "tema-2", corto: "Tema 2", titulo: "El salto del personaje: cómo los motores de juego falsean la gravedad" },
   { id: "tema-3", corto: "Tema 3", titulo: "Gravedad artificial por rotación en hábitats espaciales" },
   { id: "tema-4", corto: "Tema 4", titulo: "Llantas de Fórmula 1: la ventana de temperatura y el agarre" },
-  { id: "tema-5", corto: "Tema 5", titulo: "El resorte detrás de un control háptico" },
+  { id: "tema-5", corto: "Tema 5", titulo: "El resorte virtual detrás de un control háptico" },
 ];
 const SECCIONES = [...TEMAS, { id: "referencias", corto: "Referencias", titulo: "Referencias" }];
 
@@ -44,7 +44,7 @@ export default function App() {
 
       <header className="portada">
         <div className="portada-interior">
-          <p className="portada-etiqueta">Portafolio de evidencias · Avance 1</p>
+          <p className="portada-etiqueta">Portafolio de evidencias · Avance 2</p>
           <h1>Física que se programa</h1>
           <p className="portada-sub">
             Cinemática y dinámica aplicadas al desarrollo de software: cinco casos, cada uno con su caso de uso en
@@ -102,7 +102,7 @@ export default function App() {
 
       <footer className="pie">
         <p>
-          Portafolio de evidencias · FUN-18 Física I · Avance 1. Los datos de Rodrigues et al. (2020) se usan con licencia
+          Portafolio de evidencias · FUN-18 Física I · Avance 2. Los datos de Rodrigues et al. (2020) se usan con licencia
           CC BY 4.0 y fueron modificados como se explica en el Tema 1.
         </p>
       </footer>
