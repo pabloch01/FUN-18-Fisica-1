@@ -18,17 +18,19 @@ export default function Tema5() {
           El software de efectos de un gatillo adaptativo (periféricos hápticos, industria de los videojuegos). Un
           efecto como “tensar un arco” se modela como un resorte virtual con una posición de inicio <i>x</i><sub>0</sub> y una
           rigidez <i>k</i>: el programa lee la posición del gatillo, calcula la fuerza que corresponde y ordena esa fuerza
-          al motor, todo dentro de un lazo de control que se repite varias veces por milisegundo.
+          al motor, todo dentro de un lazo de control que se repite cientos o miles de veces por segundo.
         </p>
 
         <h4>El concepto físico</h4>
         <p>
-          La ley de Hooke da la fuerza de un resorte proporcional a su deformación, y la tercera ley de Newton dice
-          que si el dedo empuja el gatillo, el gatillo empuja al dedo con una fuerza igual y opuesta (Serway y Jewett,
-          2018). Esa reacción es lo que se siente:
+          La ley de Hooke da la fuerza de un resorte proporcional a su deformación y opuesta a ella: es una fuerza
+          restauradora, que siempre apunta hacia la posición de equilibrio. La tercera ley de Newton dice que si el dedo
+          empuja el gatillo, el gatillo empuja al dedo con una fuerza igual y opuesta (Serway y Jewett, 2018). Esa
+          reacción es lo que se siente. Tomando <i>x</i> como el recorrido del gatillo hacia adentro:
         </p>
         <Eq etiqueta="Resorte virtual del gatillo">
-          <div><i>F</i> = 0 para <i>x</i> &lt; <i>x</i><sub>0</sub> &nbsp;&nbsp; <i>F</i> = <i>k</i>(<i>x</i> − <i>x</i><sub>0</sub>) para <i>x</i> ≥ <i>x</i><sub>0</sub></div>
+          <div>Gatillo sobre el dedo: <i>F</i> = 0 para <i>x</i> &lt; <i>x</i><sub>0</sub> &nbsp;&nbsp; <i>F</i> = −<i>k</i>(<i>x</i> − <i>x</i><sub>0</sub>) para <i>x</i> ≥ <i>x</i><sub>0</sub> (restauradora)</div>
+          <div>Dedo sobre el gatillo (tercera ley): <i>F</i>′ = −<i>F</i> = +<i>k</i>(<i>x</i> − <i>x</i><sub>0</sub>) &nbsp;&nbsp; magnitud |<i>F</i>| = <i>k</i>(<i>x</i> − <i>x</i><sub>0</sub>)</div>
           <div>Trabajo del dedo: <i>W</i> = ½<i>k</i>(<i>x</i> − <i>x</i><sub>0</sub>)²</div>
         </Eq>
         <p>
@@ -43,7 +45,7 @@ export default function Tema5() {
         <Tabla
           numero={9}
           titulo="Ejemplo numérico ilustrativo (valores hipotéticos, no medidos en un control real)"
-          nota="Con b = 0,5 N·s/m y K = 1 000 N/m, el tiempo de muestreo máximo para un resorte pasivo es T = 2b/K = 1 ms. Con k = 1 000 N/m y 5 mm de recorrido, F = 5 N y W = 12,5 mJ."
+          nota="Con b = 0,5 N·s/m y K = 1 000 N/m, el tiempo de muestreo máximo para un resorte pasivo es T = 2b/K = 1 ms. Con k = 1 000 N/m y 5 mm de recorrido, |F| = 5 N y W = 12,5 mJ."
         >
           <table>
             <thead>
@@ -85,14 +87,15 @@ export default function Tema5() {
 
         <h4>Análisis</h4>
         <p>
-          En 9:35 el autor del video (TronicsFix, 2020) muestra el mecanismo del gatillo, al que llama <em>gatillo adaptativo</em>. Se ve un motor
+          En 9:35 el autor del video (TronicsFix, 2020) muestra el mecanismo del gatillo, al que llama <em>adaptive trigger</em> (gatillo adaptativo). Se ve un motor
           eléctrico pequeño cuyo eje termina en un tornillo sin fin, que engrana con una rueda dentada; esa rueda mueve una pieza
           negra en forma de sector, montada sobre un pivote con un resorte pequeño. Esa pieza es contra la que llega el gatillo,
           y su posición la fija el motor a través de los engranajes. Esa posición define <i>x</i><sub>0</sub>: antes de ella el gatillo se
           mueve libre y <i>F</i> = 0, que es el tramo ① de la Figura 4a. En 9:46 el gatillo llega a esa pieza y empieza la
-          resistencia: desde ahí la fuerza que siente el dedo crece con el recorrido, como en la ley de Hooke,
-          <i> F</i> = <i>k</i>(<i>x</i> − <i>x</i><sub>0</sub>); es el tramo ② de la figura, cuya pendiente es la rigidez <i>k</i>. Esa fuerza es la reacción de
-          la que habla la tercera ley de Newton: el dedo empuja el gatillo con <i>F</i> y el gatillo empuja al dedo con −<i>F</i>. Al final
+          resistencia: desde ahí el gatillo empuja al dedo hacia afuera con una fuerza restauradora cuya magnitud crece
+          con el recorrido, como en la ley de Hooke, |<i>F</i>| = <i>k</i>(<i>x</i> − <i>x</i><sub>0</sub>); es el tramo ② de la figura, cuya pendiente es la rigidez <i>k</i>. Esa fuerza es la reacción de
+          la que habla la tercera ley de Newton: el dedo empuja el gatillo hacia adentro con <i>F</i>′ = +<i>k</i>(<i>x</i> − <i>x</i><sub>0</sub>) y el gatillo empuja al dedo hacia afuera con
+          <i> F</i> = −<i>F</i>′. Al final
           del recorrido, el tope mecánico del tramo ③ hace subir la fuerza de golpe.
         </p>
         <p>
@@ -104,7 +107,7 @@ export default function Tema5() {
         <Figura
           numero={4}
           titulo="Resorte virtual de un gatillo háptico: modelo idealizado."
-          nota="Valores ilustrativos (k = 1 000 N/m, x₀ = 2 mm, tope en 7 mm, b = 0,5 N·s/m); no son mediciones de un control real. En (a), el área sombreada es el trabajo del dedo, W = 12,5 mJ. En (b), la condición de pasividad es b > K·T/2 (Colgate y Schenkel, 1997)."
+          nota="Valores ilustrativos (k = 1 000 N/m, x₀ = 2 mm, tope en 7 mm, b = 0,5 N·s/m); no son mediciones de un control real. En (a) se grafica la magnitud de la fuerza restauradora, |F| = k(x − x₀); el área sombreada es el trabajo del dedo, W = 12,5 mJ. En (b), la condición de pasividad es b > K·T/2 (Colgate y Schenkel, 1997)."
         >
           <img
             src={`${import.meta.env.BASE_URL}img/tema5_resorte_virtual.png`}
