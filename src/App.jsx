@@ -41,6 +41,15 @@ export default function App() {
   const ids = useMemo(() => SECCIONES.map((s) => s.id), []);
   const activa = useSeccionActiva(ids);
 
+  // En móvil, si la barra de planetas no cabe completa (pantallas muy angostas), se desplaza sola
+  // para que el planeta de la sección activa quede a la vista
+  useEffect(() => {
+    const barra = document.querySelector(".indice");
+    const li = barra?.querySelector("a.activo")?.parentElement;
+    if (!barra || !li || barra.scrollWidth <= barra.clientWidth) return;
+    barra.scrollTo({ left: li.offsetLeft - (barra.clientWidth - li.offsetWidth) / 2, behavior: "smooth" });
+  }, [activa]);
+
   return (
     <>
       <a className="saltar" href="#contenido">Saltar al contenido</a>

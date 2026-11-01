@@ -208,14 +208,18 @@ sub, sup { line-height: 0; }
   .layout { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0 16px 60px; }
   .indice {
     position: sticky; top: 0; z-index: 20; padding: 0; max-height: none; background: rgba(7, 11, 24, 0.94); backdrop-filter: blur(6px);
-    border-bottom: 1px solid var(--linea); margin: 0 -16px; overflow-x: auto;
+    border-bottom: 1px solid var(--linea); margin: 0 -16px; overflow-x: auto; scrollbar-width: none;
   }
+  .indice::-webkit-scrollbar { display: none; }
   .indice-titulo, .indice-largo, .indice-corto { display: none; }
-  .indice ol { display: flex; padding: 0 12px; gap: 2px; }
-  .indice ol::before { left: 24px; right: 24px; top: 50%; bottom: auto; width: auto; height: 2px; }
-  .indice a { display: block; padding: 12px 8px; border-radius: 0; }
+  /* Los 10 planetas se reparten el ancho de la pantalla para que la barra quepa sin desplazarse */
+  .indice ol { display: flex; padding: 0 8px; gap: 0; }
+  .indice ol::before { left: calc(5% + 7px); right: calc(5% + 7px); top: 50%; bottom: auto; width: auto; height: 2px; }
+  .indice li { flex: 1 1 0; min-width: 0; }
+  .indice a { display: flex; justify-content: center; padding: 14px 0; border-radius: 0; }
   .indice a.activo { background: transparent; }
-  .planeta { width: 26px; height: 26px; font-size: 11px; }
+  .indice a.activo .planeta { box-shadow: 0 0 0 4px color-mix(in srgb, var(--cat) 30%, transparent), 0 0 10px var(--cat); }
+  .planeta { width: clamp(22px, 7vw, 26px); height: clamp(22px, 7vw, 26px); font-size: 11px; }
   main { padding-top: 20px; }
   .tema-numero { width: 54px; height: 54px; font-size: 24px; }
   .tema-cabecera { gap: 14px; }
