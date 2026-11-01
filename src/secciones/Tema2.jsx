@@ -19,7 +19,7 @@ export default function Tema2() {
           cercanos al diseñador, como la altura y la distancia deseadas, y que el programa calcule los parámetros
           físicos. Los motores también separan la gravedad global de la que sufre cada objeto: en Unity 2D, por ejemplo,
           cada cuerpo tiene un <code>gravityScale</code> que fija qué proporción de la gravedad le afecta (Unity
-          Technologies, s. f.).
+          Technologies, s. f.-d).
         </p>
 
         <h4>El concepto físico</h4>

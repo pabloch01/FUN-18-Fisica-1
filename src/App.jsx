@@ -4,6 +4,10 @@ import Tema2 from "./secciones/Tema2.jsx";
 import Tema3 from "./secciones/Tema3.jsx";
 import Tema4 from "./secciones/Tema4.jsx";
 import Tema5 from "./secciones/Tema5.jsx";
+import Tema6 from "./secciones/Tema6.jsx";
+import Tema7 from "./secciones/Tema7.jsx";
+import Tema8 from "./secciones/Tema8.jsx";
+import Tema9 from "./secciones/Tema9.jsx";
 import Referencias from "./secciones/Referencias.jsx";
 
 // Nombres de los temas tal como aparecen en la consigna
@@ -13,6 +17,10 @@ const TEMAS = [
   { id: "tema-3", corto: "Tema 3", titulo: "Gravedad artificial por rotación en hábitats espaciales" },
   { id: "tema-4", corto: "Tema 4", titulo: "Llantas de Fórmula 1: la ventana de temperatura y el agarre" },
   { id: "tema-5", corto: "Tema 5", titulo: "El resorte virtual detrás de un control háptico" },
+  { id: "tema-6", corto: "Tema 6", titulo: "Frenado regenerativo en un vehículo eléctrico" },
+  { id: "tema-7", corto: "Tema 7", titulo: "El coeficiente de restitución en un motor de videojuego: por qué la pelota rebota mal" },
+  { id: "tema-8", corto: "Tema 8", titulo: "Ruedas de reacción: cómo un satélite se gira sin empujarse contra nada" },
+  { id: "tema-9", corto: "Tema 9", titulo: "Asistencia gravitatoria: cómo la Voyager ganó velocidad sin gastar combustible" },
 ];
 const SECCIONES = [...TEMAS, { id: "referencias", corto: "Referencias", titulo: "Referencias" }];
 
@@ -47,8 +55,8 @@ export default function App() {
           <p className="portada-etiqueta">Portafolio de evidencias · Avance 2</p>
           <h1>Física que se programa</h1>
           <p className="portada-sub">
-            Cinemática y dinámica aplicadas al desarrollo de software: cinco casos, cada uno con su caso de uso en
-            Ingeniería del Software y su recurso de apoyo.
+            Cinemática, dinámica, leyes de conservación y gravitación aplicadas al desarrollo de software: nueve casos,
+            cada uno con su caso de uso en Ingeniería del Software y su recurso de apoyo.
           </p>
           <dl className="portada-datos">
             <div><dt>Autor</dt><dd>Pablo Andrés Chinchilla Moya</dd></div>
@@ -96,6 +104,10 @@ export default function App() {
           <Tema3 />
           <Tema4 />
           <Tema5 />
+          <Tema6 />
+          <Tema7 />
+          <Tema8 />
+          <Tema9 />
           <Referencias />
         </main>
       </div>
