@@ -91,7 +91,7 @@ export function simularNumerico(p, dt = DT) {
 /* Utilidades de presentación                                           */
 /* ------------------------------------------------------------------ */
 
-const COLOR = { principal: "#1f5fa8", referencia: "#8a8a8a", personaje: "#2f7d5b", acento: "#c4562a", rejilla: "#d9d7cf" };
+const COLOR = { principal: "#6aa8ff", referencia: "#8d9bbb", personaje: "#4fd1a5", acento: "#ff9a5c", rejilla: "#2a3a63" };
 
 const fmt = (v, d = 2) => (Number.isFinite(v) ? v.toFixed(d).replace(".", ",") : "—");
 
@@ -237,12 +237,12 @@ export default function SimulacionSalto() {
   }, [p, ref, comparar]);
 
   /* ---------- Estilos ---------- */
-  const caja = { border: `1px solid ${COLOR.rejilla}`, borderRadius: 6, padding: 14, background: "#fff" };
+  const caja = { border: `1px solid ${COLOR.rejilla}`, borderRadius: 12, padding: 14, background: "#0e1528" };
   const fila = { display: "grid", gridTemplateColumns: "1fr auto", alignItems: "baseline", gap: 8, marginTop: 10 };
   const etiqueta = { fontSize: 13 };
   const valor = { fontVariantNumeric: "tabular-nums", fontWeight: 600, fontSize: 13 };
-  const boton = { border: `1px solid ${COLOR.principal}`, background: "#fff", color: COLOR.principal, borderRadius: 4, padding: "6px 10px", cursor: "pointer", fontSize: 13 };
-  const botonPrimario = { ...boton, background: COLOR.principal, color: "#fff" };
+  const boton = { border: `1px solid ${COLOR.principal}`, background: "transparent", color: COLOR.principal, borderRadius: 6, padding: "6px 10px", cursor: "pointer", fontSize: 13 };
+  const botonPrimario = { ...boton, background: COLOR.principal, color: "#071022", fontWeight: 600 };
   const celda = { padding: "4px 8px", textAlign: "right", fontVariantNumeric: "tabular-nums", fontSize: 13, borderBottom: `1px solid ${COLOR.rejilla}` };
   const celdaIzq = { ...celda, textAlign: "left" };
 
@@ -319,7 +319,7 @@ export default function SimulacionSalto() {
           <button type="button" style={boton} onClick={() => { setCorriendo(false); setAnim(null); }}>Reiniciar</button>
         </div>
 
-        <div style={{ marginTop: 16, fontSize: 12, color: "#555" }}>
+        <div style={{ marginTop: 16, fontSize: 12, color: "#9aa8c6" }}>
           Casos de verificación:
           <div style={{ display: "flex", gap: 6, marginTop: 6 }}>
             {Object.keys(CASOS).map((id) => (
@@ -337,20 +337,20 @@ export default function SimulacionSalto() {
             {ticksHasta(xExt + X_MIN).map((v) => (
               <g key={`x${v}`}>
                 <line x1={X(v)} x2={X(v)} y1={M.t} y2={M.t + ph} stroke={COLOR.rejilla} strokeWidth="0.7" />
-                <text x={X(v)} y={H - M.b + 16} fontSize="11" textAnchor="middle" fill="#555">{fmt(v, v % 1 ? 1 : 0)}</text>
+                <text x={X(v)} y={H - M.b + 16} fontSize="11" textAnchor="middle" fill="#9aa8c6">{fmt(v, v % 1 ? 1 : 0)}</text>
               </g>
             ))}
             {ticksHasta(yExt).map((v) => (
               <g key={`y${v}`}>
                 <line x1={M.l} x2={M.l + pw} y1={Y(v)} y2={Y(v)} stroke={COLOR.rejilla} strokeWidth="0.7" />
-                <text x={M.l - 8} y={Y(v) + 4} fontSize="11" textAnchor="end" fill="#555">{fmt(v, v % 1 ? 1 : 0)}</text>
+                <text x={M.l - 8} y={Y(v) + 4} fontSize="11" textAnchor="end" fill="#9aa8c6">{fmt(v, v % 1 ? 1 : 0)}</text>
               </g>
             ))}
-            <text x={M.l + pw / 2} y={H - 8} fontSize="12" textAnchor="middle" fill="#333">Distancia horizontal [m]</text>
-            <text transform={`translate(14 ${M.t + ph / 2}) rotate(-90)`} fontSize="12" textAnchor="middle" fill="#333">Altura [m]</text>
+            <text x={M.l + pw / 2} y={H - 8} fontSize="12" textAnchor="middle" fill="#c8d2e8">Distancia horizontal [m]</text>
+            <text transform={`translate(14 ${M.t + ph / 2}) rotate(-90)`} fontSize="12" textAnchor="middle" fill="#c8d2e8">Altura [m]</text>
 
             {/* suelo */}
-            <line x1={M.l} x2={M.l + pw} y1={Y(0)} y2={Y(0)} stroke="#333" strokeWidth="1.5" />
+            <line x1={M.l} x2={M.l + pw} y1={Y(0)} y2={Y(0)} stroke="#c8d2e8" strokeWidth="1.5" />
 
             {/* trayectoria de referencia y trayectoria principal */}
             {comparar && <polyline points={trayectoria(ref)} fill="none" stroke={COLOR.referencia} strokeWidth="1.6" strokeDasharray="6 5" />}
@@ -359,7 +359,7 @@ export default function SimulacionSalto() {
             {/* ápice y aterrizaje (analíticos) */}
             <circle cx={X(p.vx * p.tAp)} cy={Y(p.h)} r="4" fill={COLOR.acento} />
             <text x={X(p.vx * p.tAp) + 8} y={Y(p.h) - 8} fontSize="11" fill={COLOR.acento}>h = {fmt(p.h)} m</text>
-            <circle cx={X(p.alcance)} cy={Y(0)} r="3.5" fill="#333" />
+            <circle cx={X(p.alcance)} cy={Y(0)} r="3.5" fill="#c8d2e8" />
 
             {/* personaje (0,5 m × 1,0 m) */}
             {(() => {
@@ -368,7 +368,7 @@ export default function SimulacionSalto() {
               return <rect x={X(px) - 0.25 * s} y={Y(py) - 1.0 * s} width={0.5 * s} height={1.0 * s} rx={Math.min(6, 0.15 * s)} fill={COLOR.personaje} />;
             })()}
           </svg>
-          <div style={{ fontSize: 12, color: "#555", marginTop: 4 }}>
+          <div style={{ fontSize: 12, color: "#9aa8c6", marginTop: 4 }}>
             Línea continua: salto con los parámetros elegidos. Línea punteada: misma altura máxima con g = 9,81 m/s². El personaje mide 1,0 m en la escena.
           </div>
         </div>
@@ -424,7 +424,7 @@ export default function SimulacionSalto() {
           </ResponsiveContainer>
         </div>
 
-        <p style={{ fontSize: 12, color: "#555", marginTop: 12 }}>
+        <p style={{ fontSize: 12, color: "#9aa8c6", marginTop: 12 }}>
           Modelo: y(t) = v₀t − ½gt²; h = v₀²/(2g); t_ap = v₀/g; en modo diseño g = 2h/t_ap² y v₀ = 2h/t_ap; bajada desde el reposo con
           g_bajada = k·g (Serway y Jewett, 2018; enfoque de diseño de saltos según Pittman, 2016).
         </p>

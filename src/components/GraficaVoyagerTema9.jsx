@@ -9,7 +9,7 @@ import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tool
 */
 
 const CSV_URL = `${import.meta.env?.BASE_URL ?? "/"}data/voyager2_rapidez.csv`;
-const COLOR = { linea: "#1f5fa8", encuentro: "#c4562a" };
+const COLOR = { linea: "#a99bff", encuentro: "#ff9a5c" };
 
 // Fechas de máxima aproximación (NASA Science, 2026)
 const ENCUENTROS = [
@@ -79,7 +79,7 @@ export default function GraficaVoyagerTema9() {
               label={{ value: e.planeta, position: "top", fontSize: 12, fill: COLOR.encuentro }}
             />
           ))}
-          <ReferenceDot x={datos[0].anio} y={datos[0].v} r={4} fill={COLOR.linea} stroke="none" label={{ value: `lanzamiento: ${fmt(datos[0].v)} km/s`, position: "right", fontSize: 11, fill: "#333" }} />
+          <ReferenceDot x={datos[0].anio} y={datos[0].v} r={4} fill={COLOR.linea} stroke="none" label={{ value: `lanzamiento: ${fmt(datos[0].v)} km/s`, position: "right", fontSize: 11, fill: "#c8d2e8" }} />
           <Tooltip
             labelFormatter={(a) => {
               const f = datos.find((d) => Math.abs(d.anio - a) < 1e-6);
@@ -90,7 +90,7 @@ export default function GraficaVoyagerTema9() {
           <Line dataKey="v" name="Rapidez respecto al Sol" stroke={COLOR.linea} strokeWidth={2.4} dot={false} isAnimationActive={false} />
         </LineChart>
       </ResponsiveContainer>
-      <p style={{ fontSize: 13, color: "#444", margin: "6px 0 0" }}>
+      <p style={{ fontSize: 13, color: "#a9b6d3", margin: "6px 0 0" }}>
         <strong>Figura 7.</strong> Rapidez de la sonda Voyager 2 respecto al Sol entre agosto de 1977 y enero de 1990, con
         sus cuatro encuentros planetarios. <em>Nota.</em> Datos: vectores de velocidad heliocéntrica de JPL Horizons
         (Jet Propulsion Laboratory, 2026), cada 10 días, 452 puntos. Fechas de los encuentros: NASA Science (2026).

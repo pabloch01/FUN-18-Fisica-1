@@ -24,14 +24,14 @@ import {
 
 const CSV_URL = `${import.meta.env?.BASE_URL ?? "/"}data/balance_tema6.csv`;
 const COLOR = {
-  vel: "#333333",
-  trac: "#1d2a3a",
-  aero: "#8a8a8a",
-  rod: "#b9a77a",
-  fren: "#c4562a",
-  recup: "#2f7d5b",
-  perd: "#e0a458",
-  fric: "#9b2c2c",
+  vel: "#c8d2e8",
+  trac: "#e6ebf5",
+  aero: "#8d9bbb",
+  rod: "#d4c38f",
+  fren: "#ff9a5c",
+  recup: "#4fd1a5",
+  perd: "#f2c46d",
+  fric: "#ff6b6b",
 };
 const T_MAX = 1369;
 const TICKS_T = [0, 200, 400, 600, 800, 1000, 1200, 1369];
@@ -124,14 +124,14 @@ export default function GraficaFrenadoTema6() {
         </ResponsiveContainer>
       </Panel>
 
-      <p style={{ fontSize: 13, color: "#444", margin: "4px 0 0" }}>
+      <p style={{ fontSize: 13, color: "#a9b6d3", margin: "4px 0 0" }}>
         <strong>Al final del ciclo:</strong> trabajo de tracción {fmt(fin.trac)} Wh = aire {fmt(fin.aero)} Wh + rodadura{" "}
         {fmt(fin.rod)} Wh + frenado {fmt(fin.fren)} Wh. De la energía de frenado, {fmt(fin.recup)} Wh (
         {fmt((100 * fin.recup) / fin.fren)} %) vuelven a la batería, {fmt(fin.perd_reg)} Wh (
         {fmt((100 * fin.perd_reg) / fin.fren)} %) se pierden en la conversión y {fmt(fin.fric)} Wh (
         {fmt((100 * fin.fric) / fin.fren)} %) se disipan en los frenos de fricción.
       </p>
-      <p style={{ fontSize: 13, color: "#444", margin: "6px 0 0" }}>
+      <p style={{ fontSize: 13, color: "#a9b6d3", margin: "6px 0 0" }}>
         <strong>Figura 5.</strong> Balance de energía de un Renault Zoe ZE50 R135 a lo largo del ciclo urbano UDDS.{" "}
         <em>Nota.</em> Perfil de velocidad: EPA (2026). Parámetros del vehículo: archivo del Zoe en FASTSim 3.1.0
         (National Renewable Energy Laboratory, s. f.). Cálculo propio segundo a segundo con P = (m·a + ½ρC<sub>d</sub>A·v² +

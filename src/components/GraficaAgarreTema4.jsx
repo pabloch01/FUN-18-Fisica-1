@@ -88,14 +88,14 @@ export default function GraficaAgarreTema4() {
             label={{ value: `Fuerza lateral máxima con F_z = ${FZ} N [N]`, angle: 90, position: "insideRight", style: { textAnchor: "middle" } }}
           />
 
-          <ReferenceArea yAxisId="mu" x1={V90[0]} x2={V90[1]} fill="#e8e3d2" fillOpacity={0.7} stroke="none" />
-          <ReferenceArea yAxisId="mu" x1={V95[0]} x2={V95[1]} fill="#c9d6e8" fillOpacity={0.8} stroke="none" />
+          <ReferenceArea yAxisId="mu" x1={V90[0]} x2={V90[1]} fill="#2c3552" fillOpacity={0.7} stroke="none" />
+          <ReferenceArea yAxisId="mu" x1={V95[0]} x2={V95[1]} fill="#1d3157" fillOpacity={0.8} stroke="none" />
           <ReferenceLine
             yAxisId="mu"
             x={T_OPT}
-            stroke="#c4562a"
+            stroke="#ff9a5c"
             strokeDasharray="2 3"
-            label={{ value: `T_opt = ${T_OPT} °C  ·  μ_max ≈ ${fmt(MU_MAX)}`, position: "insideTopRight", fontSize: 11, fill: "#c4562a" }}
+            label={{ value: `T_opt = ${T_OPT} °C  ·  μ_max ≈ ${fmt(MU_MAX)}`, position: "insideTopRight", fontSize: 11, fill: "#ff9a5c" }}
           />
 
           <Tooltip
@@ -104,17 +104,17 @@ export default function GraficaAgarreTema4() {
           />
           <Legend verticalAlign="top" height={30} />
 
-          <Line yAxisId="mu" dataKey="modelo" name="Modelo ajustado (datos: 50–101 °C)" stroke="#1f5fa8" strokeWidth={3} dot={false} isAnimationActive={false} connectNulls={false} />
-          <Line yAxisId="mu" dataKey="extrapolacion" name="Extrapolación del modelo (sin datos)" stroke="#1f5fa8" strokeWidth={2} strokeDasharray="6 5" dot={false} isAnimationActive={false} connectNulls={false} />
+          <Line yAxisId="mu" dataKey="modelo" name="Modelo ajustado (datos: 50–101 °C)" stroke="#6aa8ff" strokeWidth={3} dot={false} isAnimationActive={false} connectNulls={false} />
+          <Line yAxisId="mu" dataKey="extrapolacion" name="Extrapolación del modelo (sin datos)" stroke="#6aa8ff" strokeWidth={2} strokeDasharray="6 5" dot={false} isAnimationActive={false} connectNulls={false} />
         </LineChart>
       </ResponsiveContainer>
 
-      <p style={{ fontSize: 13, color: "#444", margin: "8px 0 0" }}>
+      <p style={{ fontSize: 13, color: "#a9b6d3", margin: "8px 0 0" }}>
         <strong>Ventana de temperatura.</strong> μ ≥ 95 % de μ_max entre ≈ {Math.round(V95[0])} y ≈ {Math.round(V95[1])} °C
         (franja azul); μ ≥ 90 % entre ≈ {Math.round(V90[0])} y ≈ {Math.round(V90[1])} °C (franja beige). Los límites
         superiores quedan fuera del rango de los datos (≈ 101 °C), así que son extrapolación del modelo.
       </p>
-      <p style={{ fontSize: 13, color: "#444", margin: "6px 0 0" }}>
+      <p style={{ fontSize: 13, color: "#a9b6d3", margin: "6px 0 0" }}>
         <strong>Figura 3.</strong> Coeficiente de fricción lateral máximo según la temperatura promedio del neumático.{" "}
         <em>Nota.</em> Curva calculada con la Ecuación 8 y la Tabla 4 de Alcázar Vargas et al. (2022), con μ_max ≈ 1,07
         leído de su Figura 16 (la tabla lo redondea a 1,1). Ensayo de banco con un neumático de calle (Austone Athena

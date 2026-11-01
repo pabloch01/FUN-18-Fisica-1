@@ -1,11 +1,13 @@
 // Piezas de presentación reutilizadas en todas las secciones
+import { bloqueDeTema, colorDeTema } from "../temas.js";
 
 export function Seccion({ id, numero, titulo, concepto, recurso, children }) {
   return (
-    <section id={id} className="tema" aria-labelledby={`${id}-titulo`}>
+    <section id={id} className="tema" aria-labelledby={`${id}-titulo`} style={{ "--cat": colorDeTema(numero) }}>
       <header className="tema-cabecera">
         <span className="tema-numero" aria-hidden="true">{numero}</span>
         <div>
+          <span className="tema-bloque">{bloqueDeTema(numero)}</span>
           <h2 id={`${id}-titulo`}>Tema {numero} — {titulo}</h2>
           <p className="tema-meta">
             <span><strong>Concepto:</strong> {concepto}</span>
