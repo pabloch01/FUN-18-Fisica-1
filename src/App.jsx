@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import PortadaOrbital from "./components/PortadaOrbital.jsx";
+import { BLOQUES, TEMAS } from "./temas.js";
 import Tema1 from "./secciones/Tema1.jsx";
 import Tema2 from "./secciones/Tema2.jsx";
 import Tema3 from "./secciones/Tema3.jsx";
@@ -10,19 +12,11 @@ import Tema8 from "./secciones/Tema8.jsx";
 import Tema9 from "./secciones/Tema9.jsx";
 import Referencias from "./secciones/Referencias.jsx";
 
-// Nombres de los temas tal como aparecen en la consigna
-const TEMAS = [
-  { id: "tema-1", corto: "Tema 1", titulo: "Rastreo y navegación de un dron de reparto" },
-  { id: "tema-2", corto: "Tema 2", titulo: "El salto del personaje: cómo los motores de juego falsean la gravedad" },
-  { id: "tema-3", corto: "Tema 3", titulo: "Gravedad artificial por rotación en hábitats espaciales" },
-  { id: "tema-4", corto: "Tema 4", titulo: "Llantas de Fórmula 1: la ventana de temperatura y el agarre" },
-  { id: "tema-5", corto: "Tema 5", titulo: "El resorte virtual detrás de un control háptico" },
-  { id: "tema-6", corto: "Tema 6", titulo: "Frenado regenerativo en un vehículo eléctrico" },
-  { id: "tema-7", corto: "Tema 7", titulo: "El coeficiente de restitución en un motor de videojuego: por qué la pelota rebota mal" },
-  { id: "tema-8", corto: "Tema 8", titulo: "Ruedas de reacción: cómo un satélite se gira sin empujarse contra nada" },
-  { id: "tema-9", corto: "Tema 9", titulo: "Asistencia gravitatoria: cómo la Voyager ganó velocidad sin gastar combustible" },
+// Índice: los nueve temas (títulos de la consigna, en temas.js) y las referencias
+const SECCIONES = [
+  ...TEMAS.map((t) => ({ ...t, etiqueta: `Tema ${t.numero}`, color: BLOQUES[t.bloque].color })),
+  { id: "referencias", etiqueta: "Referencias", titulo: "Referencias", color: "#9aa8c6" },
 ];
-const SECCIONES = [...TEMAS, { id: "referencias", corto: "Referencias", titulo: "Referencias" }];
 
 function useSeccionActiva(ids) {
   const [activa, setActiva] = useState(ids[0]);
@@ -44,28 +38,14 @@ function useSeccionActiva(ids) {
 }
 
 export default function App() {
-  const activa = useSeccionActiva(SECCIONES.map((s) => s.id));
+  const ids = useMemo(() => SECCIONES.map((s) => s.id), []);
+  const activa = useSeccionActiva(ids);
 
   return (
     <>
       <a className="saltar" href="#contenido">Saltar al contenido</a>
 
-      <header className="portada">
-        <div className="portada-interior">
-          <p className="portada-etiqueta">Portafolio de evidencias · Avance 2</p>
-          <h1>Física que se programa</h1>
-          <p className="portada-sub">
-            Cinemática, dinámica, leyes de conservación y gravitación aplicadas al desarrollo de software: nueve casos,
-            cada uno con su caso de uso en Ingeniería del Software y su recurso de apoyo.
-          </p>
-          <dl className="portada-datos">
-            <div><dt>Autor</dt><dd>Pablo Andrés Chinchilla Moya</dd></div>
-            <div><dt>Curso</dt><dd>FUN-18 Física I · Universidad CENFOTEC</dd></div>
-            <div><dt>Sección y periodo</dt><dd>FCV1 · 2026-C3</dd></div>
-            <div><dt>Docente facilitador</dt><dd>Andrés Castro Núñez</dd></div>
-          </dl>
-        </div>
-      </header>
+      <PortadaOrbital />
 
       <div className="layout">
         <nav className="indice" aria-label="Índice de temas">
@@ -73,9 +53,20 @@ export default function App() {
           <ol>
             {SECCIONES.map((s) => (
               <li key={s.id}>
-                <a href={`#${s.id}`} className={activa === s.id ? "activo" : undefined} aria-current={activa === s.id ? "true" : undefined}>
-                  <span className="indice-corto">{s.corto}</span>
-                  {s.id !== "referencias" && <span className="indice-largo">{s.titulo}</span>}
+                <a
+                  href={`#${s.id}`}
+                  className={activa === s.id ? "activo" : undefined}
+                  aria-current={activa === s.id ? "true" : undefined}
+                  style={{ "--cat": s.color }}
+                  title={s.titulo}
+                >
+                  {s.numero ? (
+                    <span className="planeta" data-n={s.numero} aria-hidden="true">{s.numero}</span>
+                  ) : (
+                    <span className="planeta referencias" aria-hidden="true">R</span>
+                  )}
+                  <span className="indice-corto">{s.etiqueta}</span>
+                  {s.numero && <span className="indice-largo">{s.corto}</span>}
                 </a>
               </li>
             ))}
@@ -93,9 +84,10 @@ export default function App() {
               datos, simulación interactiva, diagrama o multimedia con análisis.
             </p>
             <p>
-              Los datos y el contenido de terceros están citados en formato APA 7 y se reúnen en la sección de
-              referencias. Los cálculos marcados como “propios” fueron hechos por el autor a partir de las ecuaciones
-              indicadas.
+              El color de cada tema indica su bloque: azul para cinemática, naranja para dinámica, verde para las leyes de
+              conservación y violeta para gravitación. Los datos y el contenido de terceros están citados en formato APA 7
+              y se reúnen en la sección de referencias. Los cálculos marcados como “propios” fueron hechos por el autor a
+              partir de las ecuaciones indicadas.
             </p>
           </section>
 
