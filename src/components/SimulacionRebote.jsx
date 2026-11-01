@@ -11,7 +11,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 const G = 9.81; // m/s²
 const T_VENTANA = 8; // s que se muestran en la gráfica
 const E_ITF = [Math.sqrt(135 / 254), Math.sqrt(147 / 254)]; // ≈ 0,729 – 0,761 (ITF, 2023)
-const COLOR = { principal: "#1f5fa8", fantasma: "#8a8a8a", acento: "#c4562a", verde: "#2f7d5b", rejilla: "#d9d7cf", banda: "#e8eef7" };
+const COLOR = { principal: "#6aa8ff", fantasma: "#8d9bbb", acento: "#ff9a5c", verde: "#4fd1a5", rejilla: "#2a3a63", banda: "#1d3157" };
 const fmt = (v, d = 2) => (Number.isFinite(v) ? v.toFixed(d).replace(".", ",") : "—");
 
 const REGLAS = {
@@ -74,12 +74,12 @@ function choque(m1, m2, u1, u2, e) {
 }
 
 /* ---------- Estilos ---------- */
-const caja = { border: `1px solid ${COLOR.rejilla}`, borderRadius: 6, padding: 14, background: "#fff" };
+const caja = { border: `1px solid ${COLOR.rejilla}`, borderRadius: 12, padding: 14, background: "#0e1528" };
 const fila = { display: "grid", gridTemplateColumns: "1fr auto", alignItems: "baseline", gap: 8, marginTop: 10 };
 const etiqueta = { fontSize: 13 };
 const valor = { fontVariantNumeric: "tabular-nums", fontWeight: 600, fontSize: 13 };
-const boton = { border: `1px solid ${COLOR.principal}`, background: "#fff", color: COLOR.principal, borderRadius: 4, padding: "6px 10px", cursor: "pointer", fontSize: 13 };
-const botonPrimario = { ...boton, background: COLOR.principal, color: "#fff" };
+const boton = { border: `1px solid ${COLOR.principal}`, background: "transparent", color: COLOR.principal, borderRadius: 6, padding: "6px 10px", cursor: "pointer", fontSize: 13 };
+const botonPrimario = { ...boton, background: COLOR.principal, color: "#071022", fontWeight: 600 };
 const celda = { padding: "4px 8px", textAlign: "right", fontVariantNumeric: "tabular-nums", fontSize: 13, borderBottom: `1px solid ${COLOR.rejilla}` };
 const celdaIzq = { ...celda, textAlign: "left" };
 
@@ -159,7 +159,7 @@ function ModoPelota() {
     <div style={{ display: "flex", flexWrap: "wrap", gap: 20 }}>
       <div style={{ ...caja, flex: "0 0 300px", maxWidth: "100%" }}>
         <Deslizador id="ePelota" texto="Coeficiente de restitución de la pelota" valorTexto={fmt(ePelota)} min="0" max="1.1" step="0.01" value={ePelota} onChange={(ev) => setEPelota(Number(ev.target.value))} />
-        <div style={{ fontSize: 11.5, color: "#555", marginTop: 2 }}>
+        <div style={{ fontSize: 11.5, color: "#9aa8c6", marginTop: 2 }}>
           Franja realista de una pelota de tenis (ITF): {fmt(E_ITF[0])} – {fmt(E_ITF[1])}
         </div>
         <Deslizador id="ePiso" texto="Coeficiente del piso" valorTexto={fmt(ePiso)} min="0" max="1" step="0.01" value={ePiso} onChange={(ev) => setEPiso(Number(ev.target.value))} />
@@ -181,7 +181,7 @@ function ModoPelota() {
           <button type="button" style={boton} onClick={() => { cancelAnimationFrame(raf.current); setTAnim(null); }}>Reiniciar</button>
         </div>
 
-        <div style={{ marginTop: 14, fontSize: 12, color: "#555" }}>
+        <div style={{ marginTop: 14, fontSize: 12, color: "#9aa8c6" }}>
           Combinaciones rápidas:
           <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 6 }}>
             <button type="button" style={{ ...boton, padding: "3px 8px" }} onClick={() => { setEPelota(0.75); setEPiso(0.75); setRegla("Average"); setUmbral(0); }}>Realista</button>
@@ -198,18 +198,18 @@ function ModoPelota() {
             {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((v) => (
               <g key={`x${v}`}>
                 <line x1={X(v)} x2={X(v)} y1={M.t} y2={M.t + ph} stroke={COLOR.rejilla} strokeWidth="0.7" />
-                <text x={X(v)} y={H - M.b + 16} fontSize="11" textAnchor="middle" fill="#555">{v}</text>
+                <text x={X(v)} y={H - M.b + 16} fontSize="11" textAnchor="middle" fill="#9aa8c6">{v}</text>
               </g>
             ))}
             {ticksY.map((v) => (
               <g key={`y${v}`}>
                 <line x1={M.l} x2={M.l + pw} y1={Y(v)} y2={Y(v)} stroke={COLOR.rejilla} strokeWidth="0.7" />
-                <text x={M.l - 8} y={Y(v) + 4} fontSize="11" textAnchor="end" fill="#555">{fmt(v, v % 1 ? 1 : 0)}</text>
+                <text x={M.l - 8} y={Y(v) + 4} fontSize="11" textAnchor="end" fill="#9aa8c6">{fmt(v, v % 1 ? 1 : 0)}</text>
               </g>
             ))}
-            <text x={M.l + pw / 2} y={H - 8} fontSize="12" textAnchor="middle" fill="#333">Tiempo [s]</text>
-            <text transform={`translate(14 ${M.t + ph / 2}) rotate(-90)`} fontSize="12" textAnchor="middle" fill="#333">Altura de la base de la pelota [m]</text>
-            <line x1={M.l} x2={M.l + pw} y1={Y(0)} y2={Y(0)} stroke="#333" strokeWidth="1.5" />
+            <text x={M.l + pw / 2} y={H - 8} fontSize="12" textAnchor="middle" fill="#c8d2e8">Tiempo [s]</text>
+            <text transform={`translate(14 ${M.t + ph / 2}) rotate(-90)`} fontSize="12" textAnchor="middle" fill="#c8d2e8">Altura de la base de la pelota [m]</text>
+            <line x1={M.l} x2={M.l + pw} y1={Y(0)} y2={Y(0)} stroke="#c8d2e8" strokeWidth="1.5" />
 
             {fantasma && <polyline points={curva(ref)} fill="none" stroke={COLOR.fantasma} strokeWidth="1.5" strokeDasharray="6 5" />}
             <polyline points={curva(sim)} fill="none" stroke={COLOR.principal} strokeWidth="2.2" />
@@ -224,7 +224,7 @@ function ModoPelota() {
               <circle cx={X(Math.min(tAnim, T_VENTANA))} cy={Y(yBola) - radio} r={radio} fill={COLOR.verde} />
             )}
           </svg>
-          <div style={{ fontSize: 12, color: "#555", marginTop: 4 }}>
+          <div style={{ fontSize: 12, color: "#9aa8c6", marginTop: 4 }}>
             Línea continua: rebote con los valores elegidos (e efectivo = {fmt(e, 3)}). Línea punteada: rebote realista de referencia. “Soltar” anima la pelota en tiempo real.
           </div>
         </div>
@@ -270,7 +270,7 @@ function ModoPelota() {
               </tbody>
             </table>
           </div>
-          <p style={{ margin: "8px 0 0", color: "#555", fontSize: 12 }}>
+          <p style={{ margin: "8px 0 0", color: "#9aa8c6", fontSize: 12 }}>
             Rapidez de salida v′ = e·v; altura siguiente h = v′²/(2g); en cada choque se pierde la fracción 1 − e² de la energía cinética. Se muestran hasta 8 choques.
           </p>
         </div>
@@ -294,14 +294,14 @@ function ModoCarritos() {
     return (
       <g>
         <rect x={x - ancho / 2} y={y - 34} width={ancho} height={30} rx="4" fill={color} />
-        <circle cx={x - ancho / 4} cy={y} r="5" fill="#333" />
-        <circle cx={x + ancho / 4} cy={y} r="5" fill="#333" />
-        <text x={x} y={y - 15} fontSize="12" textAnchor="middle" fill="#fff">{texto}</text>
+        <circle cx={x - ancho / 4} cy={y} r="5" fill="#c8d2e8" />
+        <circle cx={x + ancho / 4} cy={y} r="5" fill="#c8d2e8" />
+        <text x={x} y={y - 15} fontSize="12" textAnchor="middle" fill="#071022" fontWeight="600">{texto}</text>
       </g>
     );
   };
   const flecha = (x, y, v, color) => {
-    if (Math.abs(v) < 1e-3) return <text x={x} y={y + 4} fontSize="11" textAnchor="middle" fill="#555">en reposo</text>;
+    if (Math.abs(v) < 1e-3) return <text x={x} y={y + 4} fontSize="11" textAnchor="middle" fill="#9aa8c6">en reposo</text>;
     const largo = 18 * v;
     return (
       <g>
@@ -331,14 +331,14 @@ function ModoCarritos() {
             <p style={{ margin: 0, fontSize: 13 }}>Con estas velocidades los carritos no se acercan (v₁ ≤ v₂), así que no chocan. Aumente v₁ o reduzca v₂.</p>
           ) : (
             <svg viewBox={`0 0 ${W} ${H}`} width="100%" role="img" aria-label="Carritos antes y después del choque" style={{ display: "block" }}>
-              <text x="12" y="22" fontSize="13" fontWeight="600" fill="#333">Antes del choque</text>
-              <line x1="12" x2={W - 12} y1="92" y2="92" stroke="#999" />
+              <text x="12" y="22" fontSize="13" fontWeight="600" fill="#c8d2e8">Antes del choque</text>
+              <line x1="12" x2={W - 12} y1="92" y2="92" stroke="#5d6c90" />
               {carrito(190, 87, m1, COLOR.principal, `m₁ = ${fmt(m1, 1)} kg`)}
               {carrito(400, 87, m2, COLOR.acento, `m₂ = ${fmt(m2, 1)} kg`)}
               {flecha(190, 40, u1, COLOR.principal)}
               {flecha(400, 40, u2, COLOR.acento)}
-              <text x="12" y="132" fontSize="13" fontWeight="600" fill="#333">Después del choque</text>
-              <line x1="12" x2={W - 12} y1="202" y2="202" stroke="#999" />
+              <text x="12" y="132" fontSize="13" fontWeight="600" fill="#c8d2e8">Después del choque</text>
+              <line x1="12" x2={W - 12} y1="202" y2="202" stroke="#5d6c90" />
               {carrito(190, 197, m1, COLOR.principal, `m₁`)}
               {carrito(400, 197, m2, COLOR.acento, `m₂`)}
               {flecha(190, 150, r.v1, COLOR.principal)}

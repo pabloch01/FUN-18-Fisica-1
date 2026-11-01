@@ -24,12 +24,12 @@ import {
 const CSV_URL = `${import.meta.env?.BASE_URL ?? "/"}data/vuelo18_procesado.csv`;
 
 const COLOR = {
-  este: "#1f5fa8",
-  norte: "#c4562a",
-  vertical: "#2f7d5b",
-  modulo: "#333333",
-  ascDesc: "#c9d6e8",
-  tramo: "#e8e3d2",
+  este: "#6aa8ff",
+  norte: "#ff9a5c",
+  vertical: "#4fd1a5",
+  modulo: "#c8d2e8",
+  ascDesc: "#1d3157",
+  tramo: "#2c3552",
 };
 
 // Fases del vuelo identificadas en los datos (segundos)
@@ -64,7 +64,7 @@ function Panel({ titulo, children, nota }) {
     <figure style={{ margin: 0 }}>
       <figcaption style={{ fontWeight: 600, marginBottom: 6 }}>{titulo}</figcaption>
       {children}
-      {nota && <p style={{ fontSize: 12, color: "#555", margin: "6px 0 0" }}>{nota}</p>}
+      {nota && <p style={{ fontSize: 12, color: "#9aa8c6", margin: "6px 0 0" }}>{nota}</p>}
     </figure>
   );
 }
@@ -146,8 +146,8 @@ export default function GraficasVuelo18() {
                 shape={() => null}
                 isAnimationActive={false}
               />
-              <ReferenceLine x={0} stroke="#999" strokeDasharray="3 3" />
-              <ReferenceLine y={0} stroke="#999" strokeDasharray="3 3" />
+              <ReferenceLine x={0} stroke="#5d6c90" strokeDasharray="3 3" />
+              <ReferenceLine y={0} stroke="#5d6c90" strokeDasharray="3 3" />
             </ScatterChart>
           </ResponsiveContainer>
         </Panel>
@@ -193,7 +193,7 @@ export default function GraficasVuelo18() {
                 label={{ value: "Velocidad [m/s]", angle: -90, position: "insideLeft" }}
               />
               <Fases yAxisId="v" />
-              <ReferenceLine yAxisId="v" y={4} stroke="#888" strokeDasharray="5 4" label={{ value: "4 m/s programada", position: "insideTopRight", fontSize: 11, fill: "#666" }} />
+              <ReferenceLine yAxisId="v" y={4} stroke="#7d8bab" strokeDasharray="5 4" label={{ value: "4 m/s programada", position: "insideTopRight", fontSize: 11, fill: "#8d9bbb" }} />
               <Tooltip {...tooltipTiempo} />
               <Legend verticalAlign="top" height={44} />
               <Line yAxisId="v" dataKey="vE" name="vE (Este)" stroke={COLOR.este} strokeWidth={1} dot={false} isAnimationActive={false} />
@@ -230,7 +230,7 @@ export default function GraficasVuelo18() {
         </Panel>
       </div>
 
-      <p style={{ fontSize: 13, color: "#444", marginTop: 16 }}>
+      <p style={{ fontSize: 13, color: "#a9b6d3", marginTop: 16 }}>
         <strong>Figura 1.</strong> Perfiles de posición, velocidad y aceleración del vuelo 18 de un dron
         de reparto. <em>Nota.</em> Datos de Rodrigues et al. (2020), licencia CC BY 4.0, modificados por el autor. Procesamiento propio: coordenadas
         locales desde el punto de despegue, velocidad rotada al marco Este–Norte con el yaw medido y
