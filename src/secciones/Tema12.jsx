@@ -16,9 +16,9 @@ export default function Tema12() {
           análisis llamado <strong>análisis modal</strong>, que calcula las frecuencias naturales y las formas de vibrar de
           una estructura a partir de su geometría, su masa y su rigidez, antes de construirla (Ansys, Inc., s. f.). El
           caso que mostró por qué ese cálculo no es opcional fue el <strong>Puente del Milenio de Londres</strong>: se
-          inauguró el 10 de junio de 2000, ese día lo cruzaron unas 90 000 personas, con hasta 2000 a la vez, y empezó a
-          balancearse de lado hasta unos 70 mm; se cerró dos días después y estuvo cerrado casi dos años (Millennium
-          Bridge, London, 2026). Sus modos laterales estaban en 0,49 Hz (tramo central), 0,77 Hz (tramo sur) y 1,05 Hz
+          inauguró el 10 de junio de 2000, ese día lo cruzaron cerca de 100 000 personas, con hasta 2000 a la vez, y empezó
+          a balancearse de lado con aceleraciones de hasta 0,25 <i>g</i>; se cerró dos días después, el 12 de junio, y no
+          reabrió hasta el 22 de febrero de 2002 (Fitzpatrick y Ridsdill Smith, s. f.; Taylor, 2002). Sus modos laterales estaban en 0,49 Hz (tramo central), 0,77 Hz (tramo sur) y 1,05 Hz
           (tramo norte), y los ingenieros de Arup concluyeron que el fenómeno puede aparecer en cualquier puente con una
           frecuencia lateral menor de 1,3 Hz, por la frecuencia normal de los pasos de los peatones (Fitzpatrick y
           Ridsdill Smith, s. f.). Desde entonces, revisar en el modelo si hay modos laterales por debajo de ese límite es
@@ -48,17 +48,17 @@ export default function Tema12() {
         <Tabla
           numero={19}
           titulo="Tres puentes y tres formas de excitación"
-          nota="Broughton: Broughton Suspension Bridge (2026). Angers: Angers Bridge (2026). Tacoma Narrows: Olson et al. (2015) y Green y Unruh (2004). Milenio: Fitzpatrick y Ridsdill Smith (s. f.) y Millennium Bridge, London (2026)."
+          nota="Broughton: Lancaster Gazette (1831) y Hodgkinson (1831), citados en Grace's Guide to British Industrial History (s. f.). Angers: Musée du Génie (s. f.) y Gautier (2013). Tacoma Narrows: Olson et al. (2015) y Green y Unruh (2004). Milenio: Fitzpatrick y Ridsdill Smith (s. f.), Dallard et al. (2001) y Taylor (2002)."
         >
           <table>
             <thead>
               <tr><th>Puente</th><th>Excitación</th><th>Mecanismo</th><th>Qué pasó</th></tr>
             </thead>
             <tbody>
-              <tr><td>Broughton, Inglaterra (12 abr. 1831)</td><td>74 soldados marchando al paso</td><td>Fuerza periódica de los pasos sobre un puente colgante; la investigación halló además un perno mal forjado</td><td>Cayó; 20 heridos. El ejército británico ordenó romper el paso al cruzar puentes</td></tr>
-              <tr><td>Angers, Francia (16 abr. 1850)</td><td>Un batallón cruzando con una tormenta que ya hacía oscilar el puente</td><td>Viento más la carga dinámica de los soldados, sobre anclajes corroídos</td><td>Cayó; murieron 226 personas</td></tr>
+              <tr><td>Broughton, Inglaterra (11 abr. 1831)</td><td>Unos 70 soldados marchando al paso</td><td>Fuerza periódica de los pasos sobre un puente colgante; la investigación halló además un defecto de construcción en una de las cadenas</td><td>Cayó; 20 heridos y ningún muerto. El ejército británico ordenó romper el paso al cruzar puentes</td></tr>
+              <tr><td>Angers, Francia (16 abr. 1850)</td><td>Un batallón cruzando con una tormenta que ya hacía oscilar el puente</td><td>Oscilación causada por la tormenta y resonancia por la tropa marchando al paso, sobre cables portantes debilitados por la oxidación</td><td>Cayó; murieron 224 personas (222 soldados y 2 empleados)</td></tr>
               <tr><td>Tacoma Narrows, EE. UU. (7 nov. 1940)</td><td>Viento de unos 68 km/h</td><td>Flameo aeroelástico: amortiguamiento efectivo negativo en torsión</td><td>Torsión de 0,2 Hz durante cerca de una hora; cayó el tramo central</td></tr>
-              <tr><td>Milenio, Londres (10 jun. 2000)</td><td>Miles de peatones</td><td>Excitación lateral sincronizada: el balanceo hace que la gente camine al ritmo del puente</td><td>Balanceo de 70 mm; cerrado; 37 amortiguadores viscosos y 52 de masa sintonizada</td></tr>
+              <tr><td>Milenio, Londres (10 jun. 2000)</td><td>Miles de peatones</td><td>Excitación lateral sincronizada: el balanceo hace que la gente camine al ritmo del puente</td><td>Aceleración lateral de hasta 0,25 <i>g</i>; cerrado casi dos años; 37 amortiguadores viscosos y otros de masa sintonizada</td></tr>
             </tbody>
           </table>
         </Tabla>
@@ -70,7 +70,9 @@ export default function Tema12() {
           cuantos peatones es diminuta comparada con la resistencia de la estructura. Lo que importa es cuándo se aplica
           esa fuerza respecto al movimiento. El análisis modal encuentra las frecuencias peligrosas en la computadora, y
           permite corregirlas cambiando la rigidez (que mueve <i>ω</i><sub>0</sub>) o agregando amortiguamiento (que
-          baja <i>A</i>), que fue exactamente la solución del Milenio. Lo que cuesta es que el modelo solo es tan bueno
+          baja <i>A</i>), que fue exactamente la solución del Milenio: con los amortiguadores, sus modos pasaron a tener más
+          del 20 % del amortiguamiento crítico (Dallard et al., 2001), es decir, <i>ζ</i> &gt; 0,2 en el lenguaje del Tema
+          10. Lo que cuesta es que el modelo solo es tan bueno
           como sus supuestos: el amortiguamiento real es difícil de estimar antes de construir, y en el Milenio el modelo
           no incluía el efecto de los peatones que se sincronizan con el puente. En Tacoma, la física necesaria para
           predecir el flameo (la interacción entre el viento y la estructura) no formaba parte del diseño de puentes de

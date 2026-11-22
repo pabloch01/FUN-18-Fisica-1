@@ -10,10 +10,6 @@ export default function Referencias() {
           <a href="https://doi.org/10.3390/s22176380">https://doi.org/10.3390/s22176380</a>
         </li>
         <li>
-          Angers Bridge. (2026). En <em>Wikipedia</em>.{" "}
-          <a href="https://en.wikipedia.org/wiki/Angers_Bridge">https://en.wikipedia.org/wiki/Angers_Bridge</a>
-        </li>
-        <li>
           Ansys, Inc. (s. f.). <em>Modal analysis</em>. Ansys Mechanical User&apos;s Guide (2024 R2).{" "}
           <a href="https://ansyshelp.ansys.com/public/Views/Secured/corp/v242/en/wb_sim/ds_modal_analysis_type.html">https://ansyshelp.ansys.com/public/Views/Secured/corp/v242/en/wb_sim/ds_modal_analysis_type.html</a>
         </li>
@@ -52,12 +48,13 @@ export default function Referencias() {
           <a href="https://doi.org/10.4271/2015-01-0973">https://doi.org/10.4271/2015-01-0973</a>
         </li>
         <li>
-          Broughton Suspension Bridge. (2026). En <em>Wikipedia</em>.{" "}
-          <a href="https://en.wikipedia.org/wiki/Broughton_Suspension_Bridge">https://en.wikipedia.org/wiki/Broughton_Suspension_Bridge</a>
-        </li>
-        <li>
           Colgate, J. E., &amp; Schenkel, G. G. (1997). Passivity of a class of sampled-data systems: Application to haptic
           interfaces. <em>Journal of Robotic Systems, 14</em>(1), 37–47.
+        </li>
+        <li>
+          Dallard, P., Fitzpatrick, A. J., Flint, A., Le Bourva, S., Low, A., Ridsdill Smith, R. M., &amp; Willford, M.
+          (2001). The London Millennium Footbridge. <em>The Structural Engineer, 79</em>(22), 17–33.{" "}
+          <a href="https://www.istructe.org/journal/volumes/volume-79-(published-in-2001)/issue-22/the-london-millennium-footbridge/">https://www.istructe.org/journal/volumes/volume-79-(published-in-2001)/issue-22/the-london-millennium-footbridge/</a>
         </li>
         <li>
           Eliahou Ontiveros, J., Patel, D., Nishball, D., &amp; Knuhtsen, R. (2025, 13 de febrero). <em>Datacenter anatomy part 2 – Cooling systems</em>. SemiAnalysis.{" "}
@@ -72,12 +69,23 @@ export default function Referencias() {
           <a href="https://ingenia.org.uk/articles/stabilising-the-london-millennium-bridge/">https://ingenia.org.uk/articles/stabilising-the-london-millennium-bridge/</a>
         </li>
         <li>
+          Gautier, J.-C. (2013). <em>La construction des ponts sur la Loire et la Maine au XIXe siècle</em> (Dossier
+          pédagogique n.º 21). Archives départementales de Maine-et-Loire.{" "}
+          <a href="https://archives.maine-et-loire.fr/fileadmin/decouvrir_apprendre/offre_pedagogique/fiches_pedagogiques/21_La_construction_des_ponts_sur_la_Loire_et_la_Maine_au_XIXe_s.pdf">https://archives.maine-et-loire.fr/fileadmin/decouvrir_apprendre/offre_pedagogique/fiches_pedagogiques/21_La_construction_des_ponts_sur_la_Loire_et_la_Maine_au_XIXe_s.pdf</a>
+        </li>
+        <li>
           Goldwasser, I., Petty, H., Desale, P., &amp; Devleker, K. (2024, 18 de marzo). <em>NVIDIA GB200 NVL72 delivers trillion-parameter LLM training and real-time inference</em>. NVIDIA Technical Blog.{" "}
           <a href="https://developer.nvidia.com/blog/nvidia-gb200-nvl72-delivers-trillion-parameter-llm-training-and-real-time-inference/">https://developer.nvidia.com/blog/nvidia-gb200-nvl72-delivers-trillion-parameter-llm-training-and-real-time-inference/</a>
         </li>
         <li>
           Google. (s. f.). <em>Get help in an emergency using your Pixel phone</em>. Pixel Phone Help.{" "}
           <a href="https://support.google.com/pixelphone/answer/7055029">https://support.google.com/pixelphone/answer/7055029</a>
+        </li>
+        <li>
+          Grace&apos;s Guide to British Industrial History. (s. f.). <em>Broughton Suspension Bridge</em>. Incluye la
+          noticia del <em>Lancaster Gazette</em> del 23 de abril de 1831 y el informe de E. Hodgkinson (1831) en las{" "}
+          <em>Memoirs of the Literary and Philosophical Society of Manchester</em>.{" "}
+          <a href="https://gracesguide.co.uk/Broughton_Suspension_Bridge">https://gracesguide.co.uk/Broughton_Suspension_Bridge</a>
         </li>
         <li>
           Green, D., &amp; Unruh, W. G. (2004). <em>Tacoma Bridge failure – a physical model</em> [Preprint]. arXiv.{" "}
@@ -118,15 +126,15 @@ export default function Referencias() {
           <a href="https://developer.mozilla.org/docs/Web/API/OscillatorNode">https://developer.mozilla.org/docs/Web/API/OscillatorNode</a>
         </li>
         <li>
-          Millennium Bridge, London. (2026). En <em>Wikipedia</em>.{" "}
-          <a href="https://en.wikipedia.org/wiki/Millennium_Bridge,_London">https://en.wikipedia.org/wiki/Millennium_Bridge,_London</a>
-        </li>
-        <li>
           Milliken, W. F., &amp; Milliken, D. L. (1995). <em>Race car vehicle dynamics</em>. SAE International.
         </li>
         <li>
           Motion. (s. f.). <em>Spring</em>. Motion documentation.{" "}
           <a href="https://motion.dev/docs/spring">https://motion.dev/docs/spring</a>
+        </li>
+        <li>
+          Musée du Génie. (s. f.). <em>Angers – La catastrophe du pont de Basse-Chaîne</em> [Ficha documental].{" "}
+          <a href="https://www.musee-du-genie-angers.fr/fpdb/10285728-doc-fiche-17.pdf">https://www.musee-du-genie-angers.fr/fpdb/10285728-doc-fiche-17.pdf</a>
         </li>
         <li>
           NASA. (2016). <em>General Mission Analysis Tool (GMAT) v.R2016a</em> (GSC-17177-1) [Software]. NASA Software Catalog.{" "}
@@ -182,6 +190,10 @@ export default function Referencias() {
         <li>
           Taki, A. (2026, 27 de abril). <em>GPU thermal density and coolant flow specs: B200, GB200, and MI300</em>. Alliance Chemical.{" "}
           <a href="https://alliancechemical.com/blogs/articles/gpu-thermal-density-b200-gb200-coolant-flow-specs">https://alliancechemical.com/blogs/articles/gpu-thermal-density-b200-gb200-coolant-flow-specs</a>
+        </li>
+        <li>
+          Taylor, D. P. (2002, agosto). Dynamic results. <em>Modern Steel Construction</em>.{" "}
+          <a href="https://www.aisc.org/globalassets/modern-steel/archives/2002/08/2002v08_dynamic_results.pdf">https://www.aisc.org/globalassets/modern-steel/archives/2002/08/2002v08_dynamic_results.pdf</a>
         </li>
         <li>
           TronicsFix. (2020). <em>PS5 DualSense Controller Teardown - A Repairability Perspective</em> [Video]. YouTube.{" "}
