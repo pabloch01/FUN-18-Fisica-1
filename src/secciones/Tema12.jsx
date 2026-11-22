@@ -47,7 +47,7 @@ export default function Tema12() {
 
         <Tabla
           numero={19}
-          titulo="Tres puentes y tres formas de excitación"
+          titulo="Cuatro puentes y tres formas de excitación"
           nota="Broughton: Lancaster Gazette (1831) y Hodgkinson (1831), citados en Grace's Guide to British Industrial History (s. f.). Angers: Musée du Génie (s. f.) y Gautier (2013). Tacoma Narrows: Olson et al. (2015) y Green y Unruh (2004). Milenio: Fitzpatrick y Ridsdill Smith (s. f.), Dallard et al. (2001) y Taylor (2002)."
         >
           <table>
