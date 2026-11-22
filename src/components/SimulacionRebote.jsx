@@ -254,7 +254,7 @@ function ModoPelota() {
                   <th style={{ ...celda, fontWeight: 600 }}>Llega a [m/s]</th>
                   <th style={{ ...celda, fontWeight: 600 }}>Sale a [m/s]</th>
                   <th style={{ ...celda, fontWeight: 600 }}>Altura siguiente [m]</th>
-                  <th style={{ ...celda, fontWeight: 600 }}>Energía perdida (1 − e²)</th>
+                  <th style={{ ...celda, fontWeight: 600 }}>Fracción de energía perdida, 1 − e²</th>
                 </tr>
               </thead>
               <tbody>
@@ -360,10 +360,12 @@ function ModoCarritos() {
                 <tr><td style={celdaIzq}>Velocidades v₁ ; v₂ [m/s]</td><td style={celda}>{fmt(u1)} ; {fmt(u2)}</td><td style={celda}>{fmt(r.v1)} ; {fmt(r.v2)}</td></tr>
                 <tr><td style={celdaIzq}>Momento total p = m₁v₁ + m₂v₂ [kg·m/s]</td><td style={celda}>{fmt(r.pAntes, 3)}</td><td style={celda}>{fmt(r.pDespues, 3)}</td></tr>
                 <tr><td style={celdaIzq}>Energía cinética total K [J]</td><td style={celda}>{fmt(r.KAntes, 3)}</td><td style={celda}>{fmt(r.KDespues, 3)}</td></tr>
+                <tr><td style={celdaIzq}>Cambio de energía cinética ΔK = K<sub>final</sub> − K<sub>inicial</sub> [J]</td><td style={celda} colSpan={2}>{fmt(r.KDespues - r.KAntes, 3)}</td></tr>
+                <tr><td style={celdaIzq}>Energía perdida = −ΔK [J]</td><td style={celda} colSpan={2}>{fmt(r.KAntes - r.KDespues, 3)}</td></tr>
               </tbody>
             </table>
             <p style={{ fontSize: 13, margin: "10px 0 0" }}>
-              El momento se conserva siempre. La energía cinética perdida es {fmt(r.KAntes - r.KDespues, 3)} J, igual a ½·μ·(1 − e²)·(v₁ − v₂)² ={" "}
+              El momento se conserva siempre. ΔK es negativo (o cero con e = 1); la energía perdida, −ΔK = {fmt(r.KAntes - r.KDespues, 3)} J, es positiva e igual a ½·μ·(1 − e²)·(v₁ − v₂)² ={" "}
               {fmt(r.perdidaFormula, 3)} J, con μ = m₁m₂/(m₁ + m₂). Con e = 1 no se pierde nada; con e = 0 los carritos quedan juntos.
             </p>
           </div>

@@ -30,10 +30,18 @@ export default function Tema7() {
         </p>
         <Eq etiqueta="Momento lineal, coeficiente de restitución y energía perdida">
           <div><i>m</i><sub>1</sub><i>v</i><sub>1</sub> + <i>m</i><sub>2</sub><i>v</i><sub>2</sub> = <i>m</i><sub>1</sub><i>v</i><sub>1</sub>′ + <i>m</i><sub>2</sub><i>v</i><sub>2</sub>′ &nbsp;&nbsp; <i>e</i> = −(<i>v</i><sub>2</sub>′ − <i>v</i><sub>1</sub>′) / (<i>v</i><sub>2</sub> − <i>v</i><sub>1</sub>)</div>
-          <div>Δ<i>K</i> = ½ μ (1 − <i>e</i>²)(<i>v</i><sub>1</sub> − <i>v</i><sub>2</sub>)² &nbsp;&nbsp; μ = <i>m</i><sub>1</sub><i>m</i><sub>2</sub>/(<i>m</i><sub>1</sub> + <i>m</i><sub>2</sub>)</div>
+          <div>Δ<i>K</i> = <i>K</i><sub>final</sub> − <i>K</i><sub>inicial</sub> = −½ μ (1 − <i>e</i>²)(<i>v</i><sub>1</sub> − <i>v</i><sub>2</sub>)² ≤ 0 &nbsp;&nbsp; μ = <i>m</i><sub>1</sub><i>m</i><sub>2</sub>/(<i>m</i><sub>1</sub> + <i>m</i><sub>2</sub>)</div>
+          <div><i>E</i><sub>perdida</sub> = <i>K</i><sub>inicial</sub> − <i>K</i><sub>final</sub> = −Δ<i>K</i> = ½ μ (1 − <i>e</i>²)(<i>v</i><sub>1</sub> − <i>v</i><sub>2</sub>)² ≥ 0</div>
           <div><i>e</i> = 1: elástico &nbsp;&nbsp; 0 &lt; <i>e</i> &lt; 1: inelástico &nbsp;&nbsp; <i>e</i> = 0: perfectamente inelástico</div>
           <div>Contra el piso (masa enorme): <i>v</i>′ = −<i>e</i><i>v</i> &nbsp;&nbsp; <i>h</i><sub>n</sub> = <i>e</i><sup>2n</sup><i>h</i><sub>0</sub> &nbsp;&nbsp; <i>e</i> = √(<i>h</i><sub>rebote</sub>/<i>h</i><sub>caída</sub>)</div>
         </Eq>
+        <p>
+          Conviene distinguir dos cantidades que a menudo se confunden. El <strong>cambio de energía cinética</strong>,
+          Δ<i>K</i> = <i>K</i><sub>final</sub> − <i>K</i><sub>inicial</sub>, es negativo en todo choque real, porque la
+          energía cinética final nunca supera a la inicial. La <strong>energía perdida</strong> (la que se convierte en
+          calor, sonido y deformación) es la misma cantidad con el signo cambiado, <i>E</i><sub>perdida</sub> = −Δ<i>K</i>,
+          y por eso siempre es positiva o cero. Solo con <i>e</i> = 1 las dos valen cero.
+        </p>
         <p>
           Cuando la pelota choca contra el piso también se conserva el momento: el que pierde la pelota lo gana la
           Tierra, pero su masa es tan grande que su cambio de velocidad es imperceptible. Por eso basta con escribir
@@ -118,7 +126,8 @@ export default function Tema7() {
             coeficientes. Con “Umbral de 2 m/s”, la pelota se detiene de golpe en el quinto choque, aunque todavía
             debería subir 11 cm. Con “e &gt; 1”, la pelota sube cada vez más. En el modo 2, el caso de verificación
             (2 kg a 3 m/s contra 1 kg en reposo, <i>e</i> = 0,5) da 1,5 m/s y 3,0 m/s después del choque, con el momento
-            igual a 6 kg·m/s antes y después y una pérdida de 2,25 J de energía cinética.
+            igual a 6 kg·m/s antes y después, un cambio de energía cinética Δ<i>K</i> = −2,25 J y, por lo tanto, una energía
+            perdida de 2,25 J.
           </p>
         </Destacado>
       </Bloque>
