@@ -16,7 +16,7 @@ export default function Tema3() {
           del aro y una gravedad objetivo, el programa debe calcular la velocidad angular necesaria y comprobar que no
           supere el máximo de revoluciones por minuto que tolera la tripulación. Como ejemplo se toma un hábitat de
           100 m de radio con un máximo de 2 rpm y un objetivo cercano a la gravedad de Marte (≈ 0,38 g₀, la razón
-          entre la gravedad superficial de Marte y la terrestre que publica la NASA; Williams, s. f.).
+          entre la gravedad superficial de Marte y la terrestre que publica la NASA; Williams, s. f.-b).
         </p>
 
         <h4>El concepto físico</h4>

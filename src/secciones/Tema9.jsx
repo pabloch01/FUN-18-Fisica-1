@@ -33,19 +33,21 @@ export default function Tema9() {
         <Eq etiqueta="Asistencia gravitatoria vista desde el planeta y desde el Sol">
           <div>Marco del planeta: |<i>v</i><sub>∞,entrada</sub>| = |<i>v</i><sub>∞,salida</sub>| &nbsp;&nbsp; sen(δ/2) = 1 / (1 + <i>r</i><sub>p</sub><i>v</i><sub>∞</sub>² / <i>GM</i>)</div>
           <div>Marco del Sol: <i>v</i> = <i>V</i><sub>planeta</sub> + <i>v</i><sub>∞</sub> &nbsp;&nbsp; Δ|<i>v</i>| ≤ 2 <i>v</i><sub>∞</sub> sen(δ/2)</div>
-          <div>Momento: <i>m</i> Δ<i>v</i> = −<i>M</i> Δ<i>V</i><sub>planeta</sub> &nbsp;&nbsp; Escape del Sol: <i>v</i><sub>esc</sub> = √(2<i>GM</i><sub>☉</sub>/<i>r</i>)</div>
+          <div>Momento (vectorial): <i>m</i> Δ<b><i>v</i></b> = −<i>M</i> Δ<b><i>V</i></b><sub>planeta</sub> &nbsp;&nbsp; Escape del Sol: <i>v</i><sub>esc</sub> = √(2<i>GM</i><sub>☉</sub>/<i>r</i>)</div>
         </Eq>
         <p>
           Aquí <i>r</i><sub>p</sub> es la distancia de máxima aproximación y <i>M</i> la masa del planeta. La energía que
           gana la nave no sale de la nada: la pierde el planeta, que se frena una cantidad imperceptible porque su masa es
           enorme. Esa es la conservación del momento, y por eso la ganancia máxima depende de la velocidad del planeta
-          alrededor del Sol.
+          alrededor del Sol. La conservación del momento es una ecuación entre <strong>vectores</strong>: lo que cuenta es
+          el cambio del vector velocidad, Δ<b><i>v</i></b> = <b><i>v</i></b><sub>después</sub> − <b><i>v</i></b><sub>antes</sub>,
+          que incluye el giro de la trayectoria, y no solo la diferencia de rapideces.
         </p>
 
         <Tabla
           numero={15}
           titulo="Comprobación con los datos reales del paso por Júpiter (cálculo propio)"
-          nota="Velocidades heliocéntricas de la Voyager 2 y de Júpiter el 6 de junio y el 5 de agosto de 1979, de JPL Horizons (Jet Propulsion Laboratory, 2026). Distancia de máxima aproximación: 645 000 km (NASA Science, 2026). GM de Júpiter = 1,267 × 10⁸ km³/s². Masa de la Voyager 2: 721,9 kg."
+          nota="Velocidades heliocéntricas de la Voyager 2 y de Júpiter el 6 de junio y el 5 de agosto de 1979, de JPL Horizons (Jet Propulsion Laboratory, 2026). Distancia de máxima aproximación: 645 000 km (NASA Science, 2026). GM de Júpiter = 1,267 × 10⁸ km³/s². Masa de la Voyager 2: 721,9 kg; masa de Júpiter: 1,898 × 10²⁷ kg (Williams, s. f.-a). Vectores de velocidad de la Voyager 2 respecto al Sol (x, y, z en km/s, marco eclíptico J2000): antes (−9,98; −0,45; −0,57), después (−16,78; −10,90; 0,91); Δv se calcula componente a componente."
         >
           <table>
             <thead>
@@ -56,7 +58,9 @@ export default function Tema9() {
               <tr><td>Ángulo de giro δ</td><td colSpan={2}>97° medido · 96° según la fórmula</td><td>La fórmula reproduce el desvío real</td></tr>
               <tr><td>Rapidez respecto al Sol</td><td>10,0 km/s</td><td>20,0 km/s</td><td>Ganó 10 km/s sin combustible</td></tr>
               <tr><td>Velocidad de escape del Sol a ≈ 5,4 UA</td><td colSpan={2}>≈ 18,1 km/s</td><td>Después de Júpiter quedó desligada del Sistema Solar</td></tr>
-              <tr><td>Frenado de Júpiter, Δ<i>V</i> = <i>m</i>Δ<i>v</i>/<i>M</i></td><td colSpan={2}>721,9 · 10⁴ / 1,9 × 10²⁷ ≈ 4 × 10⁻²¹ m/s</td><td>El momento ganado lo pierde el planeta</td></tr>
+              <tr><td>Cambio de rapidez, Δ|<b><i>v</i></b>| = |<b><i>v</i></b><sub>después</sub>| − |<b><i>v</i></b><sub>antes</sub>|</td><td colSpan={2}>20,03 − 10,01 = 10,02 km/s</td><td>Lo que gana la rapidez</td></tr>
+              <tr><td>Cambio del vector velocidad, |Δ<b><i>v</i></b>| = |<b><i>v</i></b><sub>después</sub> − <b><i>v</i></b><sub>antes</sub>|</td><td colSpan={2}>|(−6,80; −10,45; 1,48)| = 12,55 km/s</td><td>Mayor que 10,02 km/s: además de acelerar, la velocidad giró 31°</td></tr>
+              <tr><td>Retroceso de Júpiter, |Δ<b><i>V</i></b><sub>J</sub>| = <i>m</i>|Δ<b><i>v</i></b>|/<i>M</i><sub>J</sub></td><td colSpan={2}>721,9 · 12 554 / 1,898 × 10²⁷ ≈ 4,8 × 10⁻²¹ m/s</td><td>Opuesto a Δ<b><i>v</i></b>: el momento que gana la nave lo pierde el planeta</td></tr>
             </tbody>
           </table>
         </Tabla>
