@@ -151,9 +151,12 @@ export default function Tema13() {
         <p>
           <strong>Límites del modelo.</strong> Los fabricantes reportan caídas de 1,5 a 2,5 bar en el conjunto de
           colectores, conectores y placas frías de un rack así (Taki, 2026), varias veces más que los 0,34 bar de este
-          cálculo. La diferencia está en que las placas frías y los conectores comerciales tienen pasajes más
-          restrictivos que los supuestos aquí; el método es el mismo, pero los coeficientes reales salen de las fichas de
-          cada componente. Aun con 2,5 bar, la potencia hidráulica de bombeo sería <i>Q</i>Δ<i>p</i> = 2,885 × 10⁻³ · 2,5 ×
+          cálculo. La diferencia tiene dos causas. La primera es que el modelo pone una sola placa fría por bandeja,
+          cuando cada bandeja real enfría 6 chips (2 CPU Grace y 4 GPU Blackwell), con su propio recorrido de placas y
+          uniones. La segunda es que las placas frías y los conectores comerciales tienen pasajes más finos y
+          coeficientes de pérdida más altos que los supuestos aquí. La segunda causa sola no alcanza: si en el script se
+          estrechan los microcanales de 0,5 a 0,15 mm, la caída de la placa pasa de 0,04 a 0,33 bar, pero el total del circuito solo
+          llega a 0,64 bar. El método es el mismo; los coeficientes reales salen de las fichas de cada componente. Aun con 2,5 bar, la potencia hidráulica de bombeo sería <i>Q</i>Δ<i>p</i> = 2,885 × 10⁻³ · 2,5 ×
           10⁵ ≈ 720 W, menos del 1 % de los 120 kW que se extraen.
         </p>
 
