@@ -91,7 +91,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--cat) 18%, transparent); transition: box-shadow .2s, transform .2s;
 }
 .indice a.activo .planeta { transform: scale(1.18); box-shadow: 0 0 0 6px color-mix(in srgb, var(--cat) 30%, transparent), 0 0 18px var(--cat); }
-.planeta.referencias { background: var(--texto-suave); }
+.planeta.referencias { background: var(--cat); }
 .indice-corto { display: block; font-weight: 700; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--texto-suave); }
 .indice a.activo .indice-corto { color: var(--cat); }
 .indice-largo { display: block; font-size: 13px; }
@@ -166,6 +166,17 @@ sub, sup { line-height: 0; }
 }
 .video { position: relative; aspect-ratio: 16 / 9; max-width: 760px; background: #000; border-radius: 12px; overflow: hidden; margin: 8px 0; border: 1px solid var(--linea); }
 .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video.video-4x3 { aspect-ratio: 4 / 3; max-width: 640px; }
+
+/* Tema 11: reproductores de las dos muestras de audio */
+.audios { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin: 18px 0 6px; max-width: 760px; }
+.audios figure { margin: 0; padding: 12px 14px; border: 1px solid var(--linea); border-radius: 12px; background: var(--fondo-2); }
+.audios figcaption { font-size: 13.5px; color: var(--texto-suave); margin-bottom: 8px; }
+.audios figcaption strong { color: var(--texto); }
+.audios audio { width: 100%; }
+
+/* Sección de cierre «Qué aprendí» */
+.cierre h2 { font-size: 30px; margin: 0 0 4px; letter-spacing: -.01em; }
 
 .destacado {
   background: color-mix(in srgb, var(--cat) 8%, var(--fondo-2)); border: 1px solid color-mix(in srgb, var(--cat) 30%, transparent);
@@ -212,14 +223,14 @@ sub, sup { line-height: 0; }
   }
   .indice::-webkit-scrollbar { display: none; }
   .indice-titulo, .indice-largo, .indice-corto { display: none; }
-  /* Los 10 planetas se reparten el ancho de la pantalla para que la barra quepa sin desplazarse */
+  /* Los 15 planetas (13 temas, «Qué aprendí» y referencias) se reparten el ancho de la pantalla para que la barra quepa sin desplazarse */
   .indice ol { display: flex; padding: 0 8px; gap: 0; }
-  .indice ol::before { left: calc(5% + 7px); right: calc(5% + 7px); top: 50%; bottom: auto; width: auto; height: 2px; }
+  .indice ol::before { left: calc(3.33% + 7.5px); right: calc(3.33% + 7.5px); top: 50%; bottom: auto; width: auto; height: 2px; }
   .indice li { flex: 1 1 0; min-width: 0; }
   .indice a { display: flex; justify-content: center; padding: 14px 0; border-radius: 0; }
   .indice a.activo { background: transparent; }
   .indice a.activo .planeta { box-shadow: 0 0 0 4px color-mix(in srgb, var(--cat) 30%, transparent), 0 0 10px var(--cat); }
-  .planeta { width: clamp(22px, 7vw, 26px); height: clamp(22px, 7vw, 26px); font-size: 11px; }
+  .planeta { width: clamp(18px, 5.6vw, 26px); height: clamp(18px, 5.6vw, 26px); font-size: clamp(9px, 2.6vw, 11px); }
   main { padding-top: 20px; }
   .tema-numero { width: 54px; height: 54px; font-size: 24px; }
   .tema-cabecera { gap: 14px; }

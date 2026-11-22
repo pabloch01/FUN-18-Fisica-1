@@ -25,12 +25,15 @@ const ORBITAS = TEMAS.map((t, i) => ({
   omega: 0.22 * Math.pow(1 + i * 0.42, -1.5), // rad/s
 }));
 
-function geometria(W, H) {
+function geometria(W, H, textoDerecha) {
   const angosta = W < 980;
   const m = Math.min(W, H);
-  return angosta
-    ? { cx: W * 0.5, cy: H * 0.2, base: m * 0.06, paso: m * 0.026, sol: m * 0.05 }
-    : { cx: W * 0.7, cy: H * 0.5, base: m * 0.1, paso: m * 0.042, sol: m * 0.075 };
+  if (angosta) return { cx: W * 0.5, cy: H * 0.2, base: m * 0.06, paso: m * 0.0175, sol: m * 0.05 };
+  // En pantalla ancha, el sistema ocupa el espacio libre a la derecha del texto, sin taparlo
+  const libre = W - textoDerecha;
+  const rMax = Math.min(H * 0.45, libre / 2 - 24);
+  const base = rMax * 0.23;
+  return { cx: textoDerecha + libre / 2, cy: H * 0.5, base, paso: (rMax - base) / (ORBITAS.length - 1), sol: base * 0.75 };
 }
 
 function Estrellas() {
@@ -73,7 +76,7 @@ export default function PortadaOrbital() {
     const dibujar = (ahora) => {
       const W = window.innerWidth;
       const H = window.innerHeight;
-      const g = geometria(W, H);
+      const g = geometria(W, H, texto.current ? texto.current.getBoundingClientRect().right : W * 0.45);
       const caja = seccion.current.getBoundingClientRect();
       if (!quieta && caja.bottom < -40) {
         // La portada ya quedó atrás: nada que dibujar, solo esperar a que vuelva a la vista
@@ -189,16 +192,16 @@ export default function PortadaOrbital() {
           <p className="orbital-etiqueta">Portafolio de evidencias · FUN-18 Física I</p>
           <h1>Física que<br /><span>se programa</span></h1>
           <p className="orbital-sub">
-            Nueve sistemas de software que funcionan porque respetan las leyes de la mecánica: del dron que calcula su
-            hora de llegada a la Voyager que le roba velocidad a Júpiter.
+            Trece sistemas de software que funcionan porque respetan las leyes de la mecánica: del dron que calcula su
+            hora de llegada al agua que enfría un rack de inteligencia artificial.
           </p>
           <dl className="orbital-datos">
             <div><dt>Autor</dt><dd>Pablo Andrés Chinchilla Moya</dd></div>
             <div><dt>Docente facilitador</dt><dd>Andrés Castro Núñez</dd></div>
             <div><dt>Curso</dt><dd>FUN-18 Física I · Universidad CENFOTEC</dd></div>
-            <div><dt>Sección y periodo</dt><dd>FCV1 · 2026-C3 · Avance 2</dd></div>
+            <div><dt>Sección y periodo</dt><dd>FCV1 · 2026-C3 · Entrega final</dd></div>
           </dl>
-          <p className="orbital-pista"><span aria-hidden="true">↓</span> {quieta ? "Los nueve temas están abajo" : "Desliza para entrar en órbita"}</p>
+          <p className="orbital-pista"><span aria-hidden="true">↓</span> {quieta ? "Los trece temas están abajo" : "Desliza para entrar en órbita"}</p>
         </div>
       </div>
 

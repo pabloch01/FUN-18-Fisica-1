@@ -6,6 +6,8 @@ export const BLOQUES = {
   dinamica: { nombre: "Dinámica", color: "#ff9a5c" },
   conservacion: { nombre: "Conservación", color: "#4fd1a5" },
   gravitacion: { nombre: "Gravitación", color: "#a99bff" },
+  oscilaciones: { nombre: "Oscilaciones", color: "#ff7ac6" },
+  fluidos: { nombre: "Mecánica de fluidos", color: "#33d1e6" },
 };
 
 export const TEMAS = [
@@ -18,6 +20,10 @@ export const TEMAS = [
   { id: "tema-7", numero: 7, bloque: "conservacion", corto: "Coeficiente de restitución", titulo: "El coeficiente de restitución en un motor de videojuego: por qué la pelota rebota mal" },
   { id: "tema-8", numero: 8, bloque: "conservacion", corto: "Ruedas de reacción", titulo: "Ruedas de reacción: cómo un satélite se gira sin empujarse contra nada" },
   { id: "tema-9", numero: 9, bloque: "gravitacion", corto: "Asistencia gravitatoria", titulo: "Asistencia gravitatoria: cómo la Voyager ganó velocidad sin gastar combustible" },
+  { id: "tema-10", numero: 10, bloque: "oscilaciones", corto: "Spring animations", titulo: "Spring animations: el resorte amortiguado detrás de las animaciones de iOS y de Framer Motion" },
+  { id: "tema-11", numero: 11, bloque: "oscilaciones", corto: "Síntesis de sonido", titulo: "Síntesis de sonido: armónicos, timbre y el sintetizador" },
+  { id: "tema-12", numero: 12, bloque: "oscilaciones", corto: "Resonancia estructural", titulo: "Resonancia estructural: Tacoma Narrows y por qué las tropas rompen el paso al cruzar un puente" },
+  { id: "tema-13", numero: 13, bloque: "fluidos", corto: "Enfriamiento líquido", titulo: "Enfriamiento líquido de un centro de datos: continuidad, caudal y Bernoulli" },
 ];
 
 export const colorDeTema = (numero) => BLOQUES[TEMAS[numero - 1]?.bloque]?.color ?? "#6aa8ff";

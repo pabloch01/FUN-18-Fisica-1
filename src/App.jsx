@@ -10,12 +10,18 @@ import Tema6 from "./secciones/Tema6.jsx";
 import Tema7 from "./secciones/Tema7.jsx";
 import Tema8 from "./secciones/Tema8.jsx";
 import Tema9 from "./secciones/Tema9.jsx";
+import Tema10 from "./secciones/Tema10.jsx";
+import Tema11 from "./secciones/Tema11.jsx";
+import Tema12 from "./secciones/Tema12.jsx";
+import Tema13 from "./secciones/Tema13.jsx";
+import QueAprendi from "./secciones/QueAprendi.jsx";
 import Referencias from "./secciones/Referencias.jsx";
 
-// Índice: los nueve temas (títulos de la consigna, en temas.js) y las referencias
+// Índice: los trece temas (títulos de la consigna, en temas.js), la sección de cierre y las referencias
 const SECCIONES = [
   ...TEMAS.map((t) => ({ ...t, etiqueta: `Tema ${t.numero}`, color: BLOQUES[t.bloque].color })),
-  { id: "referencias", etiqueta: "Referencias", titulo: "Referencias", color: "#9aa8c6" },
+  { id: "que-aprendi", etiqueta: "Qué aprendí", titulo: "Qué aprendí", color: "#f7c873", marca: "★" },
+  { id: "referencias", etiqueta: "Referencias", titulo: "Referencias", color: "#9aa8c6", marca: "R" },
 ];
 
 function useSeccionActiva(ids) {
@@ -72,7 +78,7 @@ export default function App() {
                   {s.numero ? (
                     <span className="planeta" data-n={s.numero} aria-hidden="true">{s.numero}</span>
                   ) : (
-                    <span className="planeta referencias" aria-hidden="true">R</span>
+                    <span className="planeta referencias" aria-hidden="true">{s.marca}</span>
                   )}
                   <span className="indice-corto">{s.etiqueta}</span>
                   {s.numero && <span className="indice-largo">{s.corto}</span>}
@@ -94,7 +100,9 @@ export default function App() {
             </p>
             <p>
               El color de cada tema indica su bloque: azul para cinemática, naranja para dinámica, verde para las leyes de
-              conservación y violeta para gravitación. Los datos y el contenido de terceros están citados en formato APA 7
+              conservación, violeta para gravitación, rosado para oscilaciones y celeste para mecánica de fluidos. Al
+              final, la sección «Qué aprendí» conecta temas que comparten el mismo principio físico y propone una
+              aplicación propia. Los datos y el contenido de terceros están citados en formato APA 7
               y se reúnen en la sección de referencias. Los cálculos marcados como “propios” fueron hechos por el autor a
               partir de las ecuaciones indicadas.
             </p>
@@ -109,13 +117,18 @@ export default function App() {
           <Tema7 />
           <Tema8 />
           <Tema9 />
+          <Tema10 />
+          <Tema11 />
+          <Tema12 />
+          <Tema13 />
+          <QueAprendi />
           <Referencias />
         </main>
       </div>
 
       <footer className="pie">
         <p>
-          Portafolio de evidencias · FUN-18 Física I · Avance 2. Los datos de Rodrigues et al. (2020) se usan con licencia
+          Portafolio de evidencias · FUN-18 Física I · Entrega final. Los datos de Rodrigues et al. (2020) se usan con licencia
           CC BY 4.0 y fueron modificados como se explica en el Tema 1.
         </p>
       </footer>
