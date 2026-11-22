@@ -91,7 +91,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--cat) 18%, transparent); transition: box-shadow .2s, transform .2s;
 }
 .indice a.activo .planeta { transform: scale(1.18); box-shadow: 0 0 0 6px color-mix(in srgb, var(--cat) 30%, transparent), 0 0 18px var(--cat); }
-.planeta.referencias { background: var(--cat); }
+.planeta.planeta-marca { background: var(--cat); }
 .indice-corto { display: block; font-weight: 700; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--texto-suave); }
 .indice a.activo .indice-corto { color: var(--cat); }
 .indice-largo { display: block; font-size: 13px; }

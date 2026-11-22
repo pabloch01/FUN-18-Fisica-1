@@ -78,7 +78,7 @@ export default function App() {
                   {s.numero ? (
                     <span className="planeta" data-n={s.numero} aria-hidden="true">{s.numero}</span>
                   ) : (
-                    <span className="planeta referencias" aria-hidden="true">{s.marca}</span>
+                    <span className="planeta planeta-marca" aria-hidden="true">{s.marca}</span>
                   )}
                   <span className="indice-corto">{s.etiqueta}</span>
                   {s.numero && <span className="indice-largo">{s.corto}</span>}
